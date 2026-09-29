@@ -6,6 +6,7 @@ import { schemaTypes } from "./schemaTypes";
 import { SINGLETONS } from "./schemaTypes/singletons";
 import { structure } from "./structure";
 import { resolve } from "./presentation";
+import { AretusMark } from "./AretusMark";
 
 const projectId = process.env.SANITY_STUDIO_PROJECT_ID!;
 const dataset = process.env.SANITY_STUDIO_DATASET || "production";
@@ -13,6 +14,7 @@ const dataset = process.env.SANITY_STUDIO_DATASET || "production";
 export default defineConfig({
   name: "default",
   title: "Aretus Enterprises",
+  icon: AretusMark,
   projectId,
   dataset,
   plugins: [

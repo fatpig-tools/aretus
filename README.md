@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aretus Enterprises website
 
-## Getting Started
+Marketing site for Aretus Enterprises, an Odisha transport and construction fleet company.
 
-First, run the development server:
+- **Frontend:** Next.js 16 (App Router), Tailwind CSS v4, Framer Motion, Lenis smooth scroll
+- **3D:** React Three Fiber scenes with optimised GLB models of the fleet (`public/models`)
+- **Video:** Remotion compositions rendered to `public/video`
+- **CMS:** Sanity, with a standalone Studio in `studio/`
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local   # fill in what you have; see below
+npm run dev                  # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Without Sanity credentials the site runs on the built-in content in `src/content/data.ts`, so it always renders.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variable | Needed for |
+|---|---|
+| `NEXT_PUBLIC_SITE_URL` | Canonical URLs, sitemap, structured data |
+| `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET` | Reading content from Sanity |
+| `SANITY_API_READ_TOKEN` | Live content, drafts and visual editing |
+| `SANITY_API_WRITE_TOKEN` | Storing contact-form enquiries; seeding content |
+| `SKETCHFAB_API_TOKEN` | Re-downloading the source 3D models (optional) |
+| `PEXELS_API_KEY` | Finding more stock photos (optional) |
 
-## Learn More
+Never commit `.env.local`.
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Command | What it does |
+|---|---|
+| `npm run dev` / `build` / `start` | Next.js |
+| `npm run studio` | Sanity Studio at http://localhost:3333 (run `npm install` in `studio/` first) |
+| `npm run seed` | Loads all site content and client logos into Sanity (idempotent) |
+| `npm run video:render` | Renders the Remotion videos into `public/video` |
+| `npm run remotion` | Opens Remotion Studio to edit the videos |
+| `npm run models:fetch` / `models:optimize` | Downloads and optimises the Sketchfab GLBs |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project layout
 
-## Deploy on Vercel
+```
+src/app/(site)/        pages
+src/components/        layout, sections, motion primitives, three.js scenes, UI
+src/content/           content types, local content, photo library, map coordinates
+src/sanity/            Sanity client, queries, live content
+src/remotion/          video compositions
+studio/                Sanity Studio (schemas, desk structure, presentation)
+public/brand/          logo files
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Brand
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The mark is an "A" whose crossbar is a dashed road centre line, on a signal-yellow badge (`public/brand/aretus-mark.svg`). Colours: charcoal `#111417`, steel `#3E5C76`, dust `#E8E4DC`, signal `#F2B705`. Type: Archivo (headings and body) and IBM Plex Mono (labels).
+
+## Credits and licences
+
+3D models are CC BY 4.0 and credited on `/credits`. Stock photography is under the Pexels License. Client logos belong to their respective owners.

@@ -1,6 +1,7 @@
 import { AbsoluteFill, Easing, Interactive, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
 import { frame as mapFrame, places, project, type PlaceKey } from "../content/geo";
 import { body, color, display, mono } from "./brand";
+import { AretusMark } from "../components/ui/AretusMark";
 
 const ease = Easing.bezier(0.16, 1, 0.3, 1);
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
@@ -155,6 +156,20 @@ export const ProjectRoutes: React.FC = () => {
         }}
       >
         Where our fleet has worked · Odisha
+      </Interactive.Div>
+
+      <Interactive.Div
+        name="Mark"
+        style={{
+          position: "absolute",
+          right: 90,
+          top: 44,
+          width: 56,
+          height: 56,
+          opacity: interpolate(f, [10, 30], [0, 1], clamp),
+        }}
+      >
+        <AretusMark style={{ display: "block", width: "100%", height: "100%" }} />
       </Interactive.Div>
 
       {/* Yamuna Expressway inset */}
