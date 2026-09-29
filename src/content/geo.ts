@@ -22,6 +22,6 @@ export function project(lat: number, lon: number, width: number, height: number)
 
 /** Routes worked, as ordered place keys (highway packages run between towns). */
 export const routes: { label: string; stops: PlaceKey[] }[] = [
-  { label: "Angul–Sambalpur", stops: ["angul", "sambalpur"] },
-  { label: "Hindol–Angul", stops: ["hindol", "angul"] },
+  { label: "Angul-Sambalpur", stops: ["angul", "sambalpur"] },
+  { label: "Hindol-Angul", stops: ["hindol", "angul"] },
 ];

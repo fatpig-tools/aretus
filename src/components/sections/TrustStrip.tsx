@@ -1,6 +1,7 @@
 import type { Client } from "@/content/types";
 import { Marquee } from "@/components/motion/Marquee";
 import { Reveal } from "@/components/motion/Reveal";
+import { ScrubText } from "@/components/motion/ScrubText";
 
 /** Client names as text (logos only with permission, per the brief). */
 export function TrustStrip({ line, clients }: { line: string; clients: Client[] }) {
@@ -12,7 +13,7 @@ export function TrustStrip({ line, clients }: { line: string; clients: Client[] 
           <span aria-hidden className="h-px w-8 bg-line" />
           On site with
         </p>
-        <p className="mt-5 max-w-3xl text-xl text-dust/85 md:text-2xl">{line}</p>
+        <ScrubText text={line} className="display mt-5 max-w-4xl text-h2" />
       </Reveal>
       <div className="mt-14">
         <Marquee seconds={45}>

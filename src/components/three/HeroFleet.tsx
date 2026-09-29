@@ -5,7 +5,7 @@ import type { MotionValue } from "framer-motion";
 import { useRef } from "react";
 import type * as THREE from "three";
 import { Excavator, HyvaTipper, PrimeMover, Tipper, type MachineHandle } from "./Machines";
-import { roadX } from "./terrain";
+import { PADS, roadX, terrainHeight } from "./terrain";
 
 const LANE = 2.3;
 const WHEEL_RADIUS = 0.55;
@@ -58,20 +58,22 @@ export function HeroFleet({ progress }: { progress?: MotionValue<number> }) {
     }
   });
 
-  const excavatorZ = LOAD_Z + 1;
-  const primeZ = -48;
+  const { loading, layby } = PADS;
 
   return (
     <group>
       {/* Excavator on the right shoulder, arm swung toward the waiting tipper. */}
       <Excavator
-        position={[roadX(excavatorZ) + LANE + 7, 0, excavatorZ - 3]}
+        position={[loading.x, terrainHeight(loading.x, loading.z), loading.z]}
         rotation-y={-Math.PI / 2 - 0.55}
       />
       <Tipper ref={loaded} />
       <HyvaTipper ref={returning} />
       {/* Prime mover with the second excavator load, parked on the left shoulder. */}
-      <group position={[roadX(primeZ) - LANE - 5.5, 0, primeZ]} rotation-y={roadYaw(primeZ, false) + 0.08}>
+      <group
+        position={[layby.x, terrainHeight(layby.x, layby.z), layby.z]}
+        rotation-y={roadYaw(layby.z, false) + 0.08}
+      >
         <PrimeMover />
         <Excavator position={[0, 1.02, -3]} />
       </group>

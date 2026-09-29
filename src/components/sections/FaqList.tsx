@@ -3,16 +3,17 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import { useState } from "react";
+import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import type { Faq } from "@/content/types";
 
 export function FaqList({ faqs }: { faqs: Faq[] }) {
   const [open, setOpen] = useState<string | null>(faqs[0]?._key ?? null);
   return (
-    <ul className="border-t border-line">
+    <Stagger as="ul" className="border-t border-line">
       {faqs.map((f) => {
         const isOpen = open === f._key;
         return (
-          <li key={f._key} className="border-b border-line">
+          <StaggerItem as="li" key={f._key} className="border-b border-line">
             <h2>
               <button
                 type="button"
@@ -45,9 +46,9 @@ export function FaqList({ faqs }: { faqs: Faq[] }) {
                 </motion.div>
               )}
             </AnimatePresence>
-          </li>
+          </StaggerItem>
         );
       })}
-    </ul>
+    </Stagger>
   );
 }

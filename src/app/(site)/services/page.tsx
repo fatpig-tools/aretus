@@ -5,6 +5,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { MachineVisual } from "@/components/sections/MachineVisual";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/motion/Reveal";
+import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import { SplitText } from "@/components/motion/SplitText";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { ImageBand } from "@/components/sections/ImageBand";
@@ -82,7 +83,7 @@ export default async function ServicesPage() {
       <ImageBand
         photo={photos["lowbed-transport"]}
         eyebrow="Heavy equipment transport"
-        statement="Mobilise at package start without waiting on outside transporters."
+        statement="Start a new package without waiting on an outside transporter."
       />
 
       <section className="border-t border-line bg-asphalt py-24 md:py-32">
@@ -100,9 +101,9 @@ export default async function ServicesPage() {
                   ))}
                 </tr>
               </thead>
-              <tbody>
+              <Stagger as="tbody" stagger={0.1}>
                 {page.engagementModels.map((m) => (
-                  <tr key={m._key} className="grid border-b border-line py-6 md:table-row md:py-0">
+                  <StaggerItem as="tr" key={m._key} className="grid border-b border-line py-6 md:table-row md:py-0">
                     <th scope="row" className="display py-1 pr-6 text-3xl md:py-7 md:align-top">
                       {m.model}
                     </th>
@@ -111,9 +112,9 @@ export default async function ServicesPage() {
                       <span className="eyebrow mr-2 md:hidden">Best for</span>
                       {m.bestFor}
                     </td>
-                  </tr>
+                  </StaggerItem>
                 ))}
-              </tbody>
+              </Stagger>
             </table>
             <p className="mt-10 max-w-2xl text-lg text-dust-dim">{page.rateNote}</p>
           </Reveal>

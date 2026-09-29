@@ -24,7 +24,7 @@ export default async function HomePage() {
       <ImageBand
         photo={photos["excavator-loading"]}
         eyebrow="Earthwork & loading"
-        statement="Our excavator and tippers work together as one self-contained earthwork unit."
+        statement="Our excavator and tippers work side by side, as one complete earthwork team."
       />
       <WhyAretus items={home.whyAretus} />
       <TrustStrip line={home.trustLine} clients={clients} />

@@ -57,8 +57,13 @@ export function Header() {
           <Logo />
           <nav aria-label="Main" className="hidden lg:block">
             <ul className="flex items-center gap-7">
-              {navLinks.slice(1).map((link) => (
-                <li key={link.href}>
+              {navLinks.slice(1).map((link, i) => (
+                <motion.li
+                  key={link.href}
+                  initial={{ opacity: 0, y: -12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + i * 0.06, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                >
                   <Link
                     href={link.href}
                     aria-current={isActive(link.href) ? "page" : undefined}
@@ -70,7 +75,7 @@ export function Header() {
                       className="absolute inset-x-0 -bottom-0.5 h-0.5 origin-left scale-x-0 bg-signal transition-transform duration-300 group-hover:scale-x-100 group-aria-[current=page]:scale-x-100"
                     />
                   </Link>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </nav>

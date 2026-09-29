@@ -50,11 +50,23 @@ export function roadX(z: number) {
 
 export const ROAD_HALF_WIDTH = 5;
 
-/** Terrain height at (x, z); flattened into a cutting where the road runs. */
+/** Levelled working areas beside the road where machines stand (graded site pads). */
+export const PADS = {
+  /** Excavator loading bay on the right shoulder. */
+  loading: { x: roadX(-8) + 11, z: -8, radius: 12 },
+  /** Prime mover lay-by on the left shoulder. */
+  layby: { x: roadX(-48) - 9, z: -48, radius: 13 },
+} as const;
+
+/** Terrain height at (x, z); flattened into a cutting where the road runs and at the site pads. */
 export function terrainHeight(x: number, z: number) {
   const n = fbm(x * 0.018 + 40, z * 0.018 + 12);
   const ridges = Math.pow(n, 2.2) * 38;
   const dist = Math.abs(x - roadX(z));
-  const cut = smoothstep(ROAD_HALF_WIDTH + 1, ROAD_HALF_WIDTH + 16, dist);
-  return ridges * cut - 0.2;
+  let flat = smoothstep(ROAD_HALF_WIDTH + 1, ROAD_HALF_WIDTH + 16, dist);
+  for (const pad of Object.values(PADS)) {
+    const d = Math.hypot(x - pad.x, z - pad.z);
+    flat = Math.min(flat, smoothstep(pad.radius * 0.7, pad.radius * 1.8, d));
+  }
+  return ridges * flat - 0.2;
 }

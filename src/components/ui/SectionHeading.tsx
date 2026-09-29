@@ -1,4 +1,5 @@
 import { SplitText } from "@/components/motion/SplitText";
+import { DrawLine } from "@/components/motion/DrawLine";
 
 export function SectionHeading({
   index,
@@ -17,7 +18,7 @@ export function SectionHeading({
     <div className={className}>
       <p className="eyebrow flex items-center gap-3">
         {index ? <span className="text-signal">{index}</span> : null}
-        <span aria-hidden className="h-px w-8 bg-line" />
+        <DrawLine className="h-px w-8 bg-current opacity-40" />
         {eyebrow}
       </p>
       <SplitText

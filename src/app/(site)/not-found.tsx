@@ -8,7 +8,7 @@ export default function NotFound() {
         <h1 className="display mt-6 text-h1">
           Road <span className="text-signal">closed.</span>
         </h1>
-        <p className="mt-6 max-w-xl text-lg text-dust-dim">This page has moved or never existed. Head back and we will get you where you need to go.</p>
+        <p className="mt-6 max-w-xl text-lg text-dust-dim">{"This page has moved, or it never existed. Head back to the homepage and we'll get you where you need to go."}</p>
         <div className="mt-10">
           <MagneticButton href="/">Back to home</MagneticButton>
         </div>

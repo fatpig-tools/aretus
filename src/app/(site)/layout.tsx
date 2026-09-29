@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/Footer";
 import { MobileBar } from "@/components/layout/MobileBar";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
+import { ScrollProgress } from "@/components/motion/ScrollProgress";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { siteUrl } from "@/lib/site";
 
@@ -33,6 +34,7 @@ export default async function SiteLayout({ children }: LayoutProps<"/">) {
         }}
       />
       <SmoothScroll />
+      <ScrollProgress />
       <a
         href="#main"
         className="sr-only z-[60] bg-signal px-4 py-3 font-bold text-charcoal focus:not-sr-only focus:fixed focus:left-4 focus:top-4"

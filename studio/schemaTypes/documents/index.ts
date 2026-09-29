@@ -79,10 +79,10 @@ export const project = defineType({
     }),
     defineField({
       name: "photo",
-      title: "Representative photo",
+      title: "Library photo",
       type: "string",
-      description: "Stock photo shown with a 'Representative photo' credit. Leave empty once real site photos are added.",
-      options: { list: ["red-soil-highway", "highway-curve", "bypass-earthwork", "iron-ore-mine", "road-cutting", "excavator-loading", "expressway-aerial", "lowbed-transport"] },
+      description: "Photo from the site's image library. Clear it once real site photos are added.",
+      options: { list: ["red-soil-highway", "highway-hills", "earthmoving-site", "open-pit-haul-roads", "grader-site", "excavator-loading", "expressway-aerial", "lowbed-transport"] },
     }),
     order,
   ],
@@ -142,7 +142,7 @@ export const enquiry = defineType({
   preview: {
     select: { title: "company", name: "name", status: "status", date: "submittedAt" },
     prepare: ({ title, name, status, date }) => ({
-      title: `${title ?? "Unknown"} — ${name ?? ""}`,
+      title: `${title ?? "Unknown"}: ${name ?? ""}`,
       subtitle: `${(status ?? "new").toUpperCase()} · ${date ? new Date(date).toLocaleDateString("en-IN") : ""}`,
     }),
   },

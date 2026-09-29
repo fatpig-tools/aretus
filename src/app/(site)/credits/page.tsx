@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { credits } from "@/content/credits";
-import { photos } from "@/content/photos";
 import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
@@ -14,13 +13,7 @@ export default function CreditsPage() {
     <>
       <PageHero eyebrow="Credits" headline="The people whose work helped build this site." />
       <section className="shell max-w-4xl pb-24 md:pb-36">
-        {[
-          ...credits,
-          {
-            title: "Photographs (representative, not Aretus sites)",
-            items: Object.values(photos).map((p) => ({ name: p.alt, author: p.credit.author, license: p.credit.license, url: p.credit.url, note: undefined as string | undefined })),
-          },
-        ].filter((g) => g.items.length).map((group) => (
+        {credits.filter((g) => g.items.length).map((group) => (
           <div key={group.title} className="border-t border-line py-10">
             <h2 className="eyebrow">{group.title}</h2>
             <ul className="mt-6 space-y-4">

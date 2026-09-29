@@ -17,7 +17,7 @@ const pins: { key: PlaceKey; at: number; note: string }[] = [
 ];
 
 const routes: { from: PlaceKey; to: PlaceKey; start: number; label: string; sub: string; dx: number; dy: number }[] = [
-  { from: "angul", to: "sambalpur", start: 120, label: "160 km", sub: "Angul–Sambalpur · AIPL", dx: -360, dy: 30 },
+  { from: "angul", to: "sambalpur", start: 120, label: "160 km", sub: "Angul-Sambalpur · AIPL", dx: -360, dy: 30 },
   { from: "hindol", to: "angul", start: 175, label: "46 km", sub: "Package 11 · Gayatri Projects", dx: -430, dy: 40 },
 ];
 

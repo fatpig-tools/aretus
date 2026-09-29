@@ -16,6 +16,7 @@ const HeroVisual = dynamic(() => import("@/components/three/HeroVisual"), {
 });
 
 const ease = [0.16, 1, 0.3, 1] as const;
+const MotionLink = motion.create(Link);
 
 export function HomeHero({ hero, services }: { hero: HomePage["hero"]; services: Feature[] }) {
   const ref = useRef<HTMLElement>(null);
@@ -78,26 +79,39 @@ export function HomeHero({ hero, services }: { hero: HomePage["hero"]; services:
 
         {/* Title-block rail: the three services as an index, plus a scroll cue. */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 0.8 }}
-          className="mt-12 hidden border-t border-dust/15 pt-5 md:grid md:grid-cols-4 md:gap-8 lg:mt-16"
+          initial="hidden"
+          animate="show"
+          variants={{ hidden: {}, show: { transition: { delayChildren: 1.3, staggerChildren: 0.1 } } }}
+          className="relative mt-12 hidden pt-5 md:grid md:grid-cols-4 md:gap-8 lg:mt-16"
         >
+          <motion.span
+            aria-hidden
+            variants={{ hidden: { scaleX: 0 }, show: { scaleX: 1, transition: { duration: 1.2, ease } } }}
+            className="absolute inset-x-0 top-0 h-px origin-left bg-dust/15"
+          />
           {services.map((s, i) => (
-            <Link key={s._key} href={s.href ?? "/services"} className="group flex items-baseline gap-3 text-sm text-dust/70 transition-colors hover:text-dust">
+            <MotionLink
+              key={s._key}
+              href={s.href ?? "/services"}
+              variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } } }}
+              className="group flex items-baseline gap-3 text-sm text-dust/70 transition-colors hover:text-dust"
+            >
               <span className="font-mono text-xs text-signal">0{i + 1}</span>
               <span className="relative">
                 {s.title}
                 <span aria-hidden className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-signal transition-transform duration-300 group-hover:scale-x-100" />
               </span>
-            </Link>
+            </MotionLink>
           ))}
-          <span className="flex items-center justify-end gap-2 font-mono text-xs uppercase tracking-[0.14em] text-steel-light">
+          <motion.span
+            variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
+            className="flex items-center justify-end gap-2 font-mono text-xs uppercase tracking-[0.14em] text-steel-light"
+          >
             Scroll
             <motion.span animate={{ y: [0, 4, 0] }} transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}>
               <ArrowDown aria-hidden className="size-3.5" />
             </motion.span>
-          </span>
+          </motion.span>
         </motion.div>
       </motion.div>
     </section>

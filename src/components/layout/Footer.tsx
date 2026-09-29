@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { SiteSettings } from "@/content/types";
 import { Logo } from "@/components/ui/Logo";
 import { RoadLine } from "@/components/motion/RoadLine";
+import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 
 const columns = [
   {
@@ -39,13 +40,13 @@ export function Footer({ settings }: { settings: SiteSettings }) {
         </p>
         <RoadLine className="mt-12 w-full" />
 
-        <div className="mt-14 grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
-          <div>
+        <Stagger className="mt-14 grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+          <StaggerItem>
             <Logo />
             <p className="mt-6 max-w-sm text-dust-dim">{settings.footerBlurb}</p>
-          </div>
+          </StaggerItem>
           {columns.map((col) => (
-            <div key={col.title}>
+            <StaggerItem key={col.title}>
               <h2 className="eyebrow">{col.title}</h2>
               <ul className="mt-5 space-y-3">
                 {col.links.map((l) => (
@@ -56,9 +57,9 @@ export function Footer({ settings }: { settings: SiteSettings }) {
                   </li>
                 ))}
               </ul>
-            </div>
+            </StaggerItem>
           ))}
-          <div>
+          <StaggerItem>
             <h2 className="eyebrow">Contact</h2>
             <ul className="mt-5 space-y-3 text-dust/85">
               {contact.length === 0 && (
@@ -80,8 +81,8 @@ export function Footer({ settings }: { settings: SiteSettings }) {
                 ) : null,
               )}
             </ul>
-          </div>
-        </div>
+          </StaggerItem>
+        </Stagger>
 
         <div className="mt-16 flex flex-col gap-3 border-t border-line pt-6 text-sm text-dust-dim sm:flex-row sm:justify-between">
           <p>{settings.copyright}</p>

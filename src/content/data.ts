@@ -19,7 +19,7 @@ export const siteSettings: SiteSettings = {
   name: "Aretus Enterprises",
   tagline: "Moving earth. Moving material. Moving projects forward.",
   footerBlurb:
-    "Aretus Enterprises is an Odisha-based transport and construction fleet company supporting highway, mining and infrastructure projects with owned tippers, prime movers and earthmoving equipment.",
+    "We're a transport and construction fleet company from Odisha. We own every tipper, prime mover and excavator we send out, and we work on highway, mining and infrastructure projects across the state.",
   copyright: "© 2026 Aretus Enterprises. All rights reserved.",
 };
 
@@ -32,7 +32,7 @@ export const homePage: HomePage = {
   hero: {
     headline: "Transport and construction support, from our own fleet.",
     subheadline:
-      "Aretus Enterprises runs tippers, prime movers and earthmoving equipment for highway contractors, mining operators and infrastructure builders. Every machine we deploy is ours, so availability and maintenance are in our hands.",
+      "We run tippers, prime movers and earthmoving equipment for highway contractors, mining operators and infrastructure builders. Every machine we send to your site is ours, so we control when it turns up and how well it's looked after.",
     primaryCta: { label: "See our fleet", href: "/fleet" },
     secondaryCta: { label: "Talk to us", href: "/contact" },
     photo: {
@@ -41,40 +41,40 @@ export const homePage: HomePage = {
     },
   },
   numbers: [
-    { _key: "km", display: "250+", countTo: 250, unit: "km", label: "of national highway packages supported" },
-    { _key: "units", display: "13", countTo: 13, label: "owned units, all current-generation" },
-    { _key: "projects", display: "8", countTo: 8, label: "major projects across highways, mining and irrigation" },
-    { _key: "tonnes", display: "4–5k", unit: "t", label: "moved per tipper per month on highway work" },
+    { _key: "km", display: "250+", countTo: 250, unit: "km", label: "of national highway packages we've supported" },
+    { _key: "units", display: "13", countTo: 13, label: "machines we own, all current-generation" },
+    { _key: "projects", display: "8", countTo: 8, label: "major projects across highways, mines and irrigation" },
+    { _key: "tonnes", display: "4-5k", unit: "t", label: "moved by each tipper in a month on highway work" },
   ],
   whatWeDo: [
     {
       _key: "haulage",
       title: "Transport & Haulage",
-      body: "Soil, sand, aggregate, GSB, WMM and mineral moved on schedule by our Tata Signa and Hyva tippers. Material reaches your crew when they need it, not a day later.",
+      body: "We move soil, sand, aggregate, GSB, WMM and mineral on your schedule with our Tata Signa and Hyva tippers. Material reaches your crew when they need it, not a day later.",
       href: "/services#haulage",
     },
     {
       _key: "earthwork",
       title: "Construction & Earthwork",
-      body: "Excavation, loading, embankment and cutting work. Our excavator and tippers work together as one self-contained earthwork unit.",
+      body: "Excavation, loading, embankments and cutting. Our excavator and tippers work side by side, so you get one complete earthwork team instead of three separate vendors.",
       href: "/services#earthwork",
     },
     {
       _key: "heavy",
       title: "Heavy Equipment Transport",
-      body: "Tata Signa 5532.S prime movers shift plant and machinery between sites and packages, so you can mobilise without waiting on outside transporters.",
+      body: "Our Tata Signa 5532.S prime movers shift plant and machinery between sites and packages. You can mobilise without waiting on an outside transporter.",
       href: "/services#heavy-transport",
     },
   ],
   whyAretus: [
-    { _key: "own", title: "Your machines, on time", body: "We own the fleet, so we don't need outside approval to send a truck." },
-    { _key: "repeat", title: "Clients come back", body: "AIPL gave us three highway packages in a row." },
-    { _key: "terrain", title: "Built for Odisha's terrain", body: "We've worked on highways, in mines and on a dam across the state." },
-    { _key: "numbers", title: "Clear numbers", body: "You get daily trip logs, measured output and billing without surprises." },
+    { _key: "own", title: "Your machines, on time", body: "We own the fleet, so nobody else has to sign off before we send a truck." },
+    { _key: "repeat", title: "Clients come back", body: "AIPL gave us three highway packages, one after another." },
+    { _key: "terrain", title: "Built for Odisha's terrain", body: "We've worked on highways, in mines and on a dam across the state. We know the ground." },
+    { _key: "numbers", title: "Clear numbers", body: "You get daily trip logs, measured output and bills with no surprises." },
   ],
-  trustLine: "Trusted on site by AIPL, Gayatri Projects, Megha Engineering, ONGC, GML and others.",
+  trustLine: "Contractors like AIPL, Gayatri Projects, Megha Engineering, ONGC and GML have trusted us on their sites.",
   closing: {
-    body: "Starting a new package? Tell us the site, the volumes and the timeline, and we'll tell you what we can put on the ground.",
+    body: "Starting a new package? Tell us the site, the volumes and the timeline. We'll tell you honestly what we can put on the ground.",
     cta: { label: "Get a Quote", href: "/contact" },
   },
 };
@@ -87,20 +87,20 @@ export const aboutPage: AboutPage = {
   },
   headline: "A fleet company that owns what it sends.",
   story: [
-    "Aretus Enterprises is an Odisha-based transport and construction fleet company. We began in earthwork and haulage. Since then we've worked on national highway packages, an expressway, a dam and mineral haulage for some of eastern India's largest operators.",
-    "We keep our model simple. We own our fleet, we put experienced operators on it, and we stay on site until the job is done. When a contractor calls us, they get machines maintained by us and managed by one point of contact, not a chain of sub-vendors.",
-    "Our work has taken us across Angul, Sambalpur, Hindol, Chandikhol, Barbil and Mayurbhanj in Odisha, and outside the state to the Yamuna Expressway.",
+    "Aretus Enterprises is a transport and construction fleet company from Odisha. We started out in earthwork and haulage, and since then we've worked on national highway packages, an expressway, a dam and mineral haulage for some of eastern India's biggest operators.",
+    "Our model is simple. We own our fleet, we put experienced operators on it, and we stay on site until the job is finished. When you call us, you get machines we maintain ourselves and one person to talk to, not a chain of sub-vendors.",
+    "The work has taken us across Angul, Sambalpur, Hindol, Chandikhol, Barbil and Mayurbhanj, and outside Odisha to the Yamuna Expressway.",
   ],
   principles: [
-    { _key: "owned", title: "Owned, not brokered", body: "Every truck and machine on our list belongs to us. No surprise substitutions, no waiting on a third party." },
-    { _key: "current", title: "Current-generation fleet", body: "Our BS-VI Tata Signa trucks give better uptime, lower emissions and easier compliance with client and state norms." },
-    { _key: "track", title: "Output you can track", body: "Trip logs and quantities are shared daily, so billing matches the work done." },
-    { _key: "window", title: "One window", body: "Haulage, earthwork and heavy transport run under one contract, one billing cycle and one contact person." },
-    { _key: "safety", title: "Safety habits from oil & gas", body: "Our work for ONGC and NE Oilfield set our site discipline. We carry the same standards onto every road and construction site." },
+    { _key: "owned", title: "Owned, not brokered", body: "Every truck and machine on our list belongs to us. No last-minute substitutions, no waiting on a third party." },
+    { _key: "current", title: "Current-generation fleet", body: "Our BS-VI Tata Signa trucks break down less, run cleaner and make it easier to meet client and state norms." },
+    { _key: "track", title: "Output you can track", body: "We share trip logs and quantities every day, so the bill always matches the work." },
+    { _key: "window", title: "One window", body: "Haulage, earthwork and heavy transport sit under one contract, one billing cycle and one contact person." },
+    { _key: "safety", title: "Safety habits from oil & gas", body: "Working for ONGC and NE Oilfield shaped how we run a site. We bring the same discipline to every road and construction job." },
   ],
   areas: ["Angul", "Sambalpur", "Hindol", "Chandikhol", "Barbil", "Mayurbhanj"],
   whereWeWork:
-    "Regular operating areas: Angul, Sambalpur, Hindol, Chandikhol, Barbil and Mayurbhanj. We take projects across eastern India and will mobilise further for the right package.",
+    "We work regularly in Angul, Sambalpur, Hindol, Chandikhol, Barbil and Mayurbhanj. We take on projects across eastern India, and we'll travel further for the right package.",
 };
 
 export const servicesPage: ServicesPage = {
@@ -116,7 +116,7 @@ export const servicesPage: ServicesPage = {
       slug: "haulage",
       number: "01",
       title: "Material Transport & Haulage",
-      body: "Our ten tippers handle high-volume movement for road and site work: earth, sand, stone aggregate, GSB, WMM and mined material. We run to your paving or loading schedule and share trip logs every day, so you always know what has moved and what is left. On AIPL's highway packages, each of our tippers moved 4,000–5,000 tonnes a month.",
+      body: "Our ten tippers handle the high-volume work on road and site jobs: earth, sand, stone aggregate, GSB, WMM and mined material. We run to your paving or loading schedule and share trip logs every day, so you always know what's moved and what's left. On AIPL's highway packages, each of our tippers moved 4,000 to 5,000 tonnes a month.",
       bestFor: ["Highway and expressway packages", "Borrow-area haulage", "Mining and mineral transport", "Bulk site material movement"],
       fleetDeployed: ["5 × Tata Signa 2823.K BS-VI (16 m³ box)", "5 × Tata tippers with Hyva hydraulics"],
       model: "tipper",
@@ -127,7 +127,7 @@ export const servicesPage: ServicesPage = {
       slug: "earthwork",
       number: "02",
       title: "Earthwork & Excavation",
-      body: "Our Hitachi 200 LC Super Plus handles excavation, cutting and loading, and our tippers work alongside it to clear material. That pairing gives you a self-contained earthwork unit on site, with no coordination between separate vendors. We have run earthwork from single-machine deployments up to a 150-person spread on the Yamuna Expressway.",
+      body: "Our Hitachi 200 LC Super Plus digs, cuts and loads, and our tippers work alongside it to clear the material. That gives you a complete earthwork unit on site, with no juggling between separate vendors. We've run everything from a single machine up to a 150-person earthwork spread on the Yamuna Expressway.",
       bestFor: ["Embankments", "Road formation", "Canal and dam work", "Cutting", "Site preparation", "Borrow-area loading"],
       fleetDeployed: ["1 × Hitachi 200 LC Super Plus (20 t class)", "Tippers as required"],
       model: "excavator",
@@ -138,7 +138,7 @@ export const servicesPage: ServicesPage = {
       slug: "heavy-transport",
       number: "03",
       title: "Heavy Equipment Transport",
-      body: "Two Tata Signa 5532.S prime movers (55 t GCW) move heavy plant and machinery between sites. Contractors use them to mobilise at package start, shift equipment between fronts, and demobilise at completion without waiting on outside transporters.",
+      body: "Our two Tata Signa 5532.S prime movers (55 t GCW) move heavy plant and machinery between sites. Contractors use them to mobilise at the start of a package, shift equipment between work fronts, and demobilise at the end, without waiting on outside transporters.",
       bestFor: ["Package mobilisation and demobilisation", "Shifting between sites", "Plant relocation"],
       fleetDeployed: ["2 × Tata Signa 5532.S BS-VI 4×2 prime movers"],
       model: "primeMover",
@@ -146,14 +146,14 @@ export const servicesPage: ServicesPage = {
     },
   ],
   engagementModels: [
-    { _key: "wet", model: "Wet hire", how: "Machine with operator, fuel and maintenance by Aretus. Billed monthly or hourly.", bestFor: "Excavator on earthwork fronts, tippers on long deployments" },
-    { _key: "dry", model: "Dry hire", how: "Machine only. Client supplies operator and fuel.", bestFor: "Sites with in-house operator pools" },
-    { _key: "trip", model: "Per-trip / per-m³", how: "Tippers paid on measured output, with trip logs shared daily.", bestFor: "Aggregate and earth movement tied to progress" },
-    { _key: "monthly", model: "Monthly fixed + overtime", how: "Guaranteed hours per month, extra hours at an agreed rate.", bestFor: "Long-duration package deployment" },
-    { _key: "mob", model: "One-time mobilisation", how: "Lump-sum movement of plant between locations.", bestFor: "Package start-up and demobilisation" },
+    { _key: "wet", model: "Wet hire", how: "We supply the machine with an operator, fuel and maintenance. Billed monthly or by the hour.", bestFor: "Excavator on earthwork fronts, tippers on long deployments" },
+    { _key: "dry", model: "Dry hire", how: "You get the machine. You supply the operator and fuel.", bestFor: "Sites with in-house operator pools" },
+    { _key: "trip", model: "Per-trip / per-m³", how: "Tippers are paid on measured output, with trip logs shared every day.", bestFor: "Aggregate and earth movement tied to progress" },
+    { _key: "monthly", model: "Monthly fixed + overtime", how: "Guaranteed hours each month, with extra hours at an agreed rate.", bestFor: "Long-duration package deployment" },
+    { _key: "mob", model: "One-time mobilisation", how: "A lump sum to move plant from one location to another.", bestFor: "Package start-up and demobilisation" },
   ],
   rateNote:
-    "Rates are shared per project after a site assessment. Tell us the location, volumes and duration to get a quote.",
+    "We share rates for each project after a site visit. Tell us the location, the volumes and how long you need us, and we'll send a quote.",
 };
 
 export const fleetPage: FleetPage = {
@@ -164,7 +164,7 @@ export const fleetPage: FleetPage = {
   },
   headline: "13 units. All owned. All maintained by us.",
   intro:
-    "Every unit below belongs to Aretus Enterprises. We don't rent machines from others to fill orders, so the fleet you see here is the fleet you get. The fleet is available for inspection at our yard or at your site.",
+    "Every machine below belongs to Aretus Enterprises. We don't rent from others to fill an order, so the fleet you see here is the fleet you get. You're welcome to inspect it at our yard, or we can bring units to your site.",
   units: [
     {
       _key: "signa-tipper",
@@ -207,7 +207,7 @@ export const fleetPage: FleetPage = {
       photo: { brief: "Excavator loading a tipper on a highway site." },
     },
   ],
-  summary: "10 tippers · 2 prime movers · 1 excavator = 13 owned units.",
+  summary: "10 tippers, 2 prime movers and 1 excavator: 13 machines, all our own.",
 };
 
 export const projectsPage: ProjectsPage = {
@@ -223,27 +223,27 @@ export const projectsPage: ProjectsPage = {
       slug: "aipl-highway-packages",
       title: "AIPL: three consecutive highway packages",
       client: "AIPL",
-      location: "Angul–Sambalpur (160 km), Chandikhol (18 km), GBRP (17 km)",
+      location: "Angul-Sambalpur (160 km), Chandikhol (18 km), GBRP (17 km)",
       scope: "Material haulage for national highway construction",
       sector: "Highways",
       km: 195,
-      body: "We started on AIPL's 160 km Angul–Sambalpur package and stayed with them through two more: Chandikhol and GBRP. Our tippers ran steady volumes to the paving and earthwork fronts through all three.",
-      result: "4,000–5,000 tonnes moved per tipper per month, and repeat work across three packages.",
+      body: "We started on AIPL's 160 km Angul-Sambalpur package and stayed with them for two more, Chandikhol and GBRP. Our tippers kept steady volumes moving to the paving and earthwork fronts on all three.",
+      result: "Each tipper moved 4,000 to 5,000 tonnes a month, and AIPL kept bringing us back.",
       place: "angul",
       photo: "red-soil-highway",
     },
     {
       _key: "gayatri",
       slug: "gayatri-package-11",
-      title: "Gayatri Projects: Package 11, Hindol–Angul",
+      title: "Gayatri Projects: Package 11, Hindol-Angul",
       client: "Gayatri Projects",
-      location: "Hindol–Angul, Odisha (46 km)",
+      location: "Hindol-Angul, Odisha (46 km)",
       scope: "Material haulage and earthwork support",
       sector: "Highways",
       km: 46,
-      body: "Haulage and earthwork support on a 46 km national highway package through central Odisha.",
+      body: "Haulage and earthwork support on a 46 km stretch of national highway through central Odisha.",
       place: "hindol",
-      photo: "highway-curve",
+      photo: "highway-hills",
     },
     {
       _key: "yamuna",
@@ -254,9 +254,9 @@ export const projectsPage: ProjectsPage = {
       scope: "Full earthwork spread",
       sector: "Expressway",
       km: 11,
-      body: "Our largest single earthwork job: 11 km on a ₹108 Cr package, with a 150-person team on site.",
-      result: "Delivered a full-spread earthwork package outside Odisha.",
-      photo: "bypass-earthwork",
+      body: "Our biggest single earthwork job: 11 km of a ₹108 crore package, with a 150-person team on site.",
+      result: "A full earthwork spread, delivered outside Odisha.",
+      photo: "earthmoving-site",
     },
     {
       _key: "mining",
@@ -266,9 +266,9 @@ export const projectsPage: ProjectsPage = {
       location: "Barbil mining belt, Odisha",
       scope: "Mineral transport",
       sector: "Mining",
-      body: "Steady daily haulage in the Barbil belt, where haul roads, loading cycles and safety rules are all tougher than on a highway.",
+      body: "Daily haulage in the Barbil belt, where the haul roads, loading cycles and safety rules are all tougher than on a highway.",
       place: "barbil",
-      photo: "iron-ore-mine",
+      photo: "open-pit-haul-roads",
     },
     {
       _key: "dam",
@@ -278,9 +278,9 @@ export const projectsPage: ProjectsPage = {
       location: "Mayurbhanj, Odisha",
       scope: "Earthwork and haulage for irrigation infrastructure",
       sector: "Irrigation",
-      body: "Earthwork and material haulage in support of dam construction in Mayurbhanj.",
+      body: "Earthwork and material haulage for dam construction in Mayurbhanj.",
       place: "mayurbhanj",
-      photo: "road-cutting",
+      photo: "grader-site",
     },
     {
       _key: "oil-gas",
@@ -288,7 +288,7 @@ export const projectsPage: ProjectsPage = {
       title: "Oil & gas: ONGC and NE Oilfield",
       client: "ONGC, NE Oilfield",
       sector: "Oil & gas",
-      body: "Work in the oil and gas sector shaped our safety and documentation habits, and we bring the same discipline to every construction site.",
+      body: "Our work in oil and gas shaped how we handle safety and paperwork, and we bring that same discipline to every construction site.",
     },
   ],
 };
@@ -301,8 +301,8 @@ export const clientsPage: ClientsPage = {
   },
   headline: "The companies that have trusted our fleet on their sites.",
   clients: [
-    { _key: "aipl", name: "AIPL", sector: "Highways", line: "Three consecutive national highway packages in Odisha." },
-    { _key: "gayatri", name: "Gayatri Projects", sector: "Highways", line: "Package 11, Hindol–Angul." },
+    { _key: "aipl", name: "AIPL", sector: "Highways", line: "Three national highway packages in Odisha, back to back." },
+    { _key: "gayatri", name: "Gayatri Projects", sector: "Highways", line: "Package 11, Hindol-Angul." },
     { _key: "megha", name: "Megha Engineering", sector: "Infrastructure" },
     { _key: "ongc", name: "ONGC", sector: "Oil & gas" },
     { _key: "ne-oilfield", name: "NE Oilfield", sector: "Oil & gas" },
@@ -325,32 +325,32 @@ export const faqPage: FaqPage = {
     {
       _key: "own",
       question: "Do you own all the equipment you supply?",
-      answer: "Yes. Every tipper, prime mover and excavator we list is owned by Aretus Enterprises. We don't sub-hire to fill orders.",
+      answer: "Yes. Every tipper, prime mover and excavator we list is owned by Aretus Enterprises. We never sub-hire to fill an order.",
     },
     {
       _key: "areas",
       question: "Which areas do you work in?",
-      answer: "We are based in Odisha and work regularly in Angul, Sambalpur, Hindol, Chandikhol, Barbil and Mayurbhanj. We also mobilise outside the state for the right project, as we did on the Yamuna Expressway.",
+      answer: "We're based in Odisha and work regularly in Angul, Sambalpur, Hindol, Chandikhol, Barbil and Mayurbhanj. We'll also travel outside the state for the right project, like we did for the Yamuna Expressway.",
     },
     {
       _key: "operators",
       question: "Do you provide operators and fuel?",
-      answer: "Yes, on wet hire. We supply trained operators, fuel and maintenance. Dry hire is available if you prefer to use your own operators.",
+      answer: "Yes. On wet hire we provide trained operators, fuel and maintenance. If you'd rather use your own operators, dry hire works too.",
     },
     {
       _key: "billing",
       question: "How is haulage billed?",
-      answer: "You can choose per-trip, per-m³, monthly fixed with overtime, or hourly billing. Trip logs are shared daily, so billing matches measured work.",
+      answer: "Whichever suits you: per trip, per m³, monthly fixed with overtime, or hourly. We share trip logs every day, so the bill matches the measured work.",
     },
     {
       _key: "inspect",
       question: "Can we inspect the fleet before signing?",
-      answer: "Yes. We can arrange an inspection at our yard or bring units to your site.",
+      answer: "Of course. We can show you the fleet at our yard or bring units to your site.",
     },
     {
       _key: "emissions",
       question: "Are your vehicles compliant with current emission norms?",
-      answer: "Our Tata Signa trucks are BS-VI. Registration, fitness, insurance and permit documents are shared with the client before deployment.",
+      answer: "Yes. Our Tata Signa trucks are BS-VI, and we share registration, fitness, insurance and permit papers with you before we deploy.",
     },
   ],
 };
@@ -359,13 +359,13 @@ export const contactPage: ContactPage = {
   seo: {
     title: "Contact Aretus Enterprises | Get a Fleet Quote",
     description:
-      "Tell us your site, volumes and timeline. We will suggest the right fleet mix and share rates after a site assessment.",
+      "Tell us your site, volumes and timeline. We'll suggest the right mix of machines and share rates after a site visit.",
   },
   headline: "Let's talk about your next project.",
   intro:
-    "Tell us about your site, the material volumes and the timeline. We'll suggest the right fleet mix and share rates after a site assessment.",
+    "Tell us about your site, the material volumes and your timeline. We'll suggest the right mix of machines and share rates after a site visit.",
   services: ["Transport & Haulage", "Earthwork & Excavation", "Heavy Equipment Transport"],
-  durations: ["Under 1 month", "1–3 months", "3–6 months", "6+ months"],
+  durations: ["Under 1 month", "1 to 3 months", "3 to 6 months", "6+ months"],
   submitLabel: "Send enquiry",
-  successMessage: "Thanks. We've received your enquiry and will call you within one working day.",
+  successMessage: "Thanks, we've got your enquiry. We'll call you within one working day.",
 };

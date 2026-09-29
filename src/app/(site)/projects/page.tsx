@@ -25,7 +25,7 @@ export default async function ProjectsPage() {
           <figure className="relative overflow-hidden border border-line bg-charcoal">
             <LazyVideo name="project-routes" loop={false} className="block aspect-video w-full" />
             <figcaption className="sr-only">
-              Map of our work: AIPL&apos;s 160 km Angul–Sambalpur package, Gayatri&apos;s 46 km Hindol–Angul package,
+              Map of our work: AIPL&apos;s 160 km Angul-Sambalpur package, Gayatri&apos;s 46 km Hindol-Angul package,
               Chandikhol, mining haulage at Barbil, the Mayurbhanj dam, and the Yamuna Expressway outside Odisha.
             </figcaption>
           </figure>

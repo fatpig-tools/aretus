@@ -65,7 +65,7 @@ export const stat = defineType({
   title: "Number",
   type: "object",
   fields: [
-    defineField({ name: "display", title: "Figure as shown", type: "string", description: "e.g. 250+ or 4–5k", validation: (r) => r.required() }),
+    defineField({ name: "display", title: "Figure as shown", type: "string", description: "e.g. 250+ or 4-5k", validation: (r) => r.required() }),
     defineField({ name: "countTo", title: "Count up to", type: "number", description: "Optional. The animation counts to this, then shows the figure above." }),
     defineField({ name: "unit", type: "string", description: "e.g. km or t" }),
     defineField({ name: "label", type: "string", validation: (r) => r.required() }),

@@ -52,7 +52,7 @@ export default async function ContactPage() {
                 ))}
               </ul>
             ) : (
-              <p className="mt-6 text-dust-dim">Phone, WhatsApp and address details are being confirmed. Use the form and we will call you back.</p>
+              <p className="mt-6 text-dust-dim">{"We're adding our phone and WhatsApp numbers here shortly. For now, send the form and we'll call you back."}</p>
             )}
             {settings.mapEmbedUrl ? (
               <iframe

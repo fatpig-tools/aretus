@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import type { Feature } from "@/content/types";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { TiltCard } from "@/components/motion/TiltCard";
 
 /**
  * Desktop: the section pins while its cards travel sideways along a road line.
@@ -33,15 +34,14 @@ export function WhyAretus({ items }: { items: Feature[] }) {
             className="shell flex flex-col gap-6 lg:w-max lg:flex-row lg:gap-8 lg:pt-12 max-lg:!transform-none"
           >
             {items.map((item, i) => (
-              <li
-                key={item._key}
-                className="flex flex-col justify-between border-t-4 border-charcoal bg-[#dcd7cd] p-8 lg:h-[24rem] lg:w-[30rem] lg:p-10"
-              >
+              <li key={item._key} className="lg:w-[30rem]">
+                <TiltCard className="flex h-full flex-col justify-between border-t-4 border-charcoal bg-[#dcd7cd] p-8 shadow-[0_30px_60px_-30px_rgba(17,20,23,0.35)] lg:h-[24rem] lg:p-10">
                 <span className="font-mono text-sm text-charcoal/50">0{i + 1} / 04</span>
                 <div>
                   <h3 className="display text-h3">{item.title}</h3>
                   <p className="mt-4 max-w-sm text-lg text-charcoal/75">{item.body}</p>
                 </div>
+                </TiltCard>
               </li>
             ))}
             <li className="hidden w-[20vw] lg:block" aria-hidden />

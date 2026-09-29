@@ -24,7 +24,7 @@ export const siteSettings = defineType({
     defineField({ name: "whatsapp", title: "WhatsApp number", type: "string", description: "Leave empty to use the phone number." }),
     defineField({ name: "email", type: "string", validation: (r) => r.email() }),
     defineField({ name: "address", type: "text", rows: 3 }),
-    defineField({ name: "hours", title: "Working hours", type: "string", description: "e.g. Mon–Sat, 9:00–19:00" }),
+    defineField({ name: "hours", title: "Working hours", type: "string", description: "e.g. Mon to Sat, 9:00 to 19:00" }),
     defineField({ name: "mapEmbedUrl", title: "Google Maps embed URL", type: "url", description: "From Google Maps → Share → Embed a map → copy the src URL." }),
     defineField({ name: "copyright", type: "string" }),
   ],
