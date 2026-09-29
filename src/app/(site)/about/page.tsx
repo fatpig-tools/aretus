@@ -5,6 +5,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/motion/Reveal";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { AreaMap } from "@/components/sections/AreaMap";
+import { ImageBand } from "@/components/sections/ImageBand";
+import { photos } from "@/content/photos";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
@@ -32,6 +34,8 @@ export default async function AboutPage() {
           ))}
         </div>
       </section>
+
+      <ImageBand photo={photos["expressway-aerial"]} />
 
       <section className="border-t border-line bg-asphalt py-24 md:py-36">
         <div className="shell">

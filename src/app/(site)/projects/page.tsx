@@ -5,7 +5,9 @@ import { getHomePage, getProjectsPage } from "@/content";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/motion/Reveal";
 import { CtaBanner } from "@/components/sections/CtaBanner";
+import Image from "next/image";
 import { LazyVideo } from "@/components/ui/LazyVideo";
+import { photos } from "@/content/photos";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { seo } = await getProjectsPage({ stega: false });
@@ -37,9 +39,22 @@ export default async function ProjectsPage() {
               <Reveal delay={0.04 * i}>
                 <Link
                   href={`/projects/${p.slug}`}
-                  className="group grid gap-6 border-b border-line py-10 transition-colors md:grid-cols-[5rem_1fr_16rem_auto] md:items-center md:gap-10 md:py-12"
+                  className="group grid gap-6 border-b border-line py-10 transition-colors md:grid-cols-[4rem_1fr_10rem_auto] md:items-center md:gap-10 md:py-12 lg:grid-cols-[4rem_14rem_1fr_10rem_auto]"
                 >
                   <span className="font-mono text-sm text-steel-light">0{i + 1}</span>
+                  <div className="relative hidden aspect-[4/3] overflow-hidden bg-asphalt lg:block">
+                    {p.photo ? (
+                      <Image
+                        src={photos[p.photo].src}
+                        alt=""
+                        fill
+                        sizes="14rem"
+                        className="object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                      />
+                    ) : (
+                      <div className="grid-bg size-full" />
+                    )}
+                  </div>
                   <div>
                     <p className="eyebrow">
                       {p.sector} · {p.client}

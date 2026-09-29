@@ -36,7 +36,7 @@ export const FLEET_QUERY = defineQuery(`*[_id == "fleetPage"][0]{
   }
 }`);
 
-const projectFields = `"_key": _id, "slug": slug.current, title, client, location, scope, sector, km, body, result, place`;
+const projectFields = `"_key": _id, "slug": slug.current, title, client, location, scope, sector, km, body, result, place, photo`;
 
 export const PROJECTS_QUERY = defineQuery(`*[_id == "projectsPage"][0]{
   ${seo}, headline,

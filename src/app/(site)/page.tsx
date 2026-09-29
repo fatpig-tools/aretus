@@ -6,6 +6,8 @@ import { WhatWeDo } from "@/components/sections/WhatWeDo";
 import { WhyAretus } from "@/components/sections/WhyAretus";
 import { TrustStrip } from "@/components/sections/TrustStrip";
 import { CtaBanner } from "@/components/sections/CtaBanner";
+import { ImageBand } from "@/components/sections/ImageBand";
+import { photos } from "@/content/photos";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { seo } = await getHomePage({ stega: false });
@@ -19,6 +21,11 @@ export default async function HomePage() {
       <HomeHero hero={home.hero} services={home.whatWeDo} />
       <NumbersStrip numbers={home.numbers} />
       <WhatWeDo items={home.whatWeDo} />
+      <ImageBand
+        photo={photos["excavator-loading"]}
+        eyebrow="Earthwork & loading"
+        statement="Our excavator and tippers work together as one self-contained earthwork unit."
+      />
       <WhyAretus items={home.whyAretus} />
       <TrustStrip line={home.trustLine} clients={clients} />
       <CtaBanner body={home.closing.body} cta={home.closing.cta} />

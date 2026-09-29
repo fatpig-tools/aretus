@@ -107,6 +107,8 @@ export type Project = {
   result?: string;
   /** Where the work was, for the survey map. */
   place?: import("./geo").PlaceKey;
+  /** Representative stock photo (never presented as Aretus's own site). */
+  photo?: import("./photos").PhotoKey;
 };
 
 export type ProjectsPage = { seo: Seo; headline: string; projects: Project[] };

@@ -7,6 +7,8 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/motion/Reveal";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { AreaMap } from "@/components/sections/AreaMap";
+import { ImageBand } from "@/components/sections/ImageBand";
+import { photos } from "@/content/photos";
 
 export async function generateStaticParams() {
   const { projects } = await getProjectsPage();
@@ -45,7 +47,9 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
         </Link>
       </PageHero>
 
-      <section className="shell grid gap-14 pb-24 lg:grid-cols-[1fr_1.3fr] lg:gap-20">
+      {project.photo ? <ImageBand photo={photos[project.photo]} /> : null}
+
+      <section className={`shell grid gap-14 pb-24 lg:grid-cols-[1fr_1.3fr] lg:gap-20 ${project.photo ? "pt-20 md:pt-28" : ""}`}>
         <Reveal>
           <dl className="border-t border-line">
             {facts.map((f) => (

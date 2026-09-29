@@ -7,6 +7,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
 import { CtaBanner } from "@/components/sections/CtaBanner";
+import { ImageBand } from "@/components/sections/ImageBand";
+import { photos } from "@/content/photos";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { seo } = await getServicesPage({ stega: false });
@@ -76,6 +78,12 @@ export default async function ServicesPage() {
           </div>
         </section>
       ))}
+
+      <ImageBand
+        photo={photos["lowbed-transport"]}
+        eyebrow="Heavy equipment transport"
+        statement="Mobilise at package start without waiting on outside transporters."
+      />
 
       <section className="border-t border-line bg-asphalt py-24 md:py-32">
         <div className="shell">

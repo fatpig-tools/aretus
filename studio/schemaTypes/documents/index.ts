@@ -77,6 +77,13 @@ export const project = defineType({
       type: "string",
       options: { list: ["angul", "sambalpur", "hindol", "chandikhol", "barbil", "mayurbhanj"] },
     }),
+    defineField({
+      name: "photo",
+      title: "Representative photo",
+      type: "string",
+      description: "Stock photo shown with a 'Representative photo' credit. Leave empty once real site photos are added.",
+      options: { list: ["red-soil-highway", "highway-curve", "bypass-earthwork", "iron-ore-mine", "road-cutting", "excavator-loading", "expressway-aerial", "lowbed-transport"] },
+    }),
     order,
   ],
   preview: { select: { title: "title", subtitle: "client" } },

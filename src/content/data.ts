@@ -230,6 +230,7 @@ export const projectsPage: ProjectsPage = {
       body: "We started on AIPL's 160 km Angul–Sambalpur package and stayed with them through two more: Chandikhol and GBRP. Our tippers ran steady volumes to the paving and earthwork fronts through all three.",
       result: "4,000–5,000 tonnes moved per tipper per month, and repeat work across three packages.",
       place: "angul",
+      photo: "red-soil-highway",
     },
     {
       _key: "gayatri",
@@ -242,6 +243,7 @@ export const projectsPage: ProjectsPage = {
       km: 46,
       body: "Haulage and earthwork support on a 46 km national highway package through central Odisha.",
       place: "hindol",
+      photo: "highway-curve",
     },
     {
       _key: "yamuna",
@@ -254,6 +256,7 @@ export const projectsPage: ProjectsPage = {
       km: 11,
       body: "Our largest single earthwork job: 11 km on a ₹108 Cr package, with a 150-person team on site.",
       result: "Delivered a full-spread earthwork package outside Odisha.",
+      photo: "bypass-earthwork",
     },
     {
       _key: "mining",
@@ -265,6 +268,7 @@ export const projectsPage: ProjectsPage = {
       sector: "Mining",
       body: "Steady daily haulage in the Barbil belt, where haul roads, loading cycles and safety rules are all tougher than on a highway.",
       place: "barbil",
+      photo: "iron-ore-mine",
     },
     {
       _key: "dam",
@@ -276,6 +280,7 @@ export const projectsPage: ProjectsPage = {
       sector: "Irrigation",
       body: "Earthwork and material haulage in support of dam construction in Mayurbhanj.",
       place: "mayurbhanj",
+      photo: "road-cutting",
     },
     {
       _key: "oil-gas",
