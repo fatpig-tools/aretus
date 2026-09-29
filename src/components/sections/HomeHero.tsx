@@ -1,9 +1,11 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowDown } from "lucide-react";
 import { useRef } from "react";
-import type { HomePage } from "@/content/types";
+import type { Feature, HomePage } from "@/content/types";
 import { SplitText } from "@/components/motion/SplitText";
 import { MagneticButton } from "@/components/motion/MagneticButton";
 import { HeroPoster } from "@/components/three/HeroVisual";
@@ -13,75 +15,90 @@ const HeroVisual = dynamic(() => import("@/components/three/HeroVisual"), {
   loading: () => <HeroPoster />,
 });
 
-export function HomeHero({ hero }: { hero: HomePage["hero"] }) {
+const ease = [0.16, 1, 0.3, 1] as const;
+
+export function HomeHero({ hero, services }: { hero: HomePage["hero"]; services: Feature[] }) {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const copyY = useTransform(scrollYProgress, [0, 1], ["0%", "-35%"]);
-  const copyOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const copyY = useTransform(scrollYProgress, [0, 1], ["0%", "-18%"]);
+  const copyOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
     <section ref={ref} className="relative h-[100svh] min-h-[640px] overflow-hidden">
       <HeroVisual progress={scrollYProgress} />
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-charcoal/10" />
-      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-charcoal/80 to-transparent" />
-      <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-charcoal/80 to-transparent" />
-
-      <motion.div style={{ y: copyY, opacity: copyOpacity }} className="shell relative flex h-full flex-col justify-end pb-24 md:pb-20">
-        <motion.p
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.5 }}
-          className="eyebrow flex items-center gap-3"
-        >
-          <span aria-hidden className="h-px w-10 bg-signal" />
-          Odisha · Transport &amp; Construction Fleet
-        </motion.p>
-        <SplitText
-          as="h1"
-          immediate
-          delay={0.55}
-          text={hero.headline}
-          highlight={["own", "fleet"]}
-          className="display mt-6 max-w-[14ch] text-[clamp(3.2rem,9.5vw,9.5rem)]"
-        />
-        <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,38rem)_1fr] lg:items-end">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.1 }}
-            className="text-lg text-dust/85 md:text-xl"
-          >
-            {hero.subheadline}
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.25 }}
-            className="flex flex-wrap gap-3 lg:justify-end"
-          >
-            <MagneticButton href={hero.primaryCta.href}>{hero.primaryCta.label}</MagneticButton>
-            <MagneticButton href={hero.secondaryCta.href} variant="ghost">
-              {hero.secondaryCta.label}
-            </MagneticButton>
-          </motion.div>
-        </div>
-      </motion.div>
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/25 to-transparent" />
+      <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 w-full bg-gradient-to-r from-charcoal/85 via-charcoal/40 to-transparent lg:w-2/3" />
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-charcoal/80 to-transparent" />
 
       <motion.div
-        aria-hidden
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8 }}
-        className="absolute bottom-6 right-[var(--gutter)] hidden items-center gap-3 font-display text-xs font-semibold uppercase tracking-[0.3em] text-steel-light md:flex"
+        style={{ y: copyY, opacity: copyOpacity }}
+        className="shell relative flex h-full flex-col pb-24 pt-24 md:pt-28 lg:pb-8"
       >
-        Scroll
-        <span className="relative h-10 w-px overflow-hidden bg-line">
-          <motion.span
-            className="absolute inset-x-0 top-0 h-4 bg-signal"
-            animate={{ y: [-16, 40] }}
-            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </span>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="eyebrow flex items-center gap-3"
+        >
+          <span aria-hidden className="size-1.5 rounded-full bg-signal" />
+          Odisha, India · Transport &amp; construction fleet
+        </motion.p>
+
+        <div className="mt-auto grid gap-10 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-7">
+            <SplitText
+              as="h1"
+              immediate
+              delay={0.5}
+              text={hero.headline}
+              highlight={["own", "fleet"]}
+              className="display max-w-[17ch] text-hero"
+            />
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1, duration: 0.9, ease }}
+              className="mt-6 max-w-[34rem] text-base leading-relaxed text-dust/75 md:text-lg"
+            >
+              {hero.subheadline}
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.15, duration: 0.9, ease }}
+              className="mt-9 flex flex-wrap gap-3"
+            >
+              <MagneticButton href={hero.primaryCta.href}>{hero.primaryCta.label}</MagneticButton>
+              <MagneticButton href={hero.secondaryCta.href} variant="ghost">
+                {hero.secondaryCta.label}
+              </MagneticButton>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Title-block rail: the three services as an index, plus a scroll cue. */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.4, duration: 0.8 }}
+          className="mt-12 hidden border-t border-dust/15 pt-5 md:grid md:grid-cols-4 md:gap-8 lg:mt-16"
+        >
+          {services.map((s, i) => (
+            <Link key={s._key} href={s.href ?? "/services"} className="group flex items-baseline gap-3 text-sm text-dust/70 transition-colors hover:text-dust">
+              <span className="font-mono text-xs text-signal">0{i + 1}</span>
+              <span className="relative">
+                {s.title}
+                <span aria-hidden className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-signal transition-transform duration-300 group-hover:scale-x-100" />
+              </span>
+            </Link>
+          ))}
+          <span className="flex items-center justify-end gap-2 font-mono text-xs uppercase tracking-[0.14em] text-steel-light">
+            Scroll
+            <motion.span animate={{ y: [0, 4, 0] }} transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}>
+              <ArrowDown aria-hidden className="size-3.5" />
+            </motion.span>
+          </span>
+        </motion.div>
       </motion.div>
     </section>
   );

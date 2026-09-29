@@ -56,7 +56,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
             ))}
           </dl>
           {project.km ? (
-            <p className="display mt-10 text-[clamp(5rem,10vw,8rem)] text-signal">
+            <p className="display mt-10 text-stat text-signal">
               {project.km}
               <span className="ml-2 text-[0.35em] text-dust">km of highway</span>
             </p>
@@ -85,7 +85,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
           <div className="shell flex items-center justify-between gap-8 py-14 md:py-20">
             <div>
               <p className="eyebrow">Next project</p>
-              <p className="display mt-3 text-[clamp(2rem,5vw,4.5rem)] transition-colors group-hover:text-signal">{next.title}</p>
+              <p className="display mt-3 text-h2 transition-colors group-hover:text-signal">{next.title}</p>
             </div>
             <ArrowRight aria-hidden className="size-12 shrink-0 text-signal transition-transform duration-300 group-hover:translate-x-2" />
           </div>

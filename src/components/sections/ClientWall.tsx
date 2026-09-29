@@ -18,7 +18,7 @@ export function ClientWall({ clients }: { clients: Client[] }) {
             type="button"
             aria-pressed={sector === s}
             onClick={() => setSector(s)}
-            className="min-h-11 cursor-pointer border border-line px-4 font-display text-base font-semibold uppercase tracking-wide transition-colors hover:border-signal aria-pressed:border-signal aria-pressed:bg-signal aria-pressed:text-charcoal"
+            className="min-h-11 cursor-pointer border border-line px-4 font-mono text-xs font-medium uppercase tracking-[0.12em] transition-colors hover:border-signal aria-pressed:border-signal aria-pressed:bg-signal aria-pressed:text-charcoal"
           >
             {s}
           </button>
@@ -41,7 +41,7 @@ export function ClientWall({ clients }: { clients: Client[] }) {
             >
               <p className="eyebrow">{c.sector}</p>
               <div>
-                <h2 className="display text-[clamp(2rem,3.5vw,3rem)] transition-colors group-hover:text-signal">{c.name}</h2>
+                <h2 className="display text-h3 transition-colors group-hover:text-signal">{c.name}</h2>
                 {c.line ? <p className="mt-3 text-dust-dim">{c.line}</p> : null}
               </div>
             </motion.li>

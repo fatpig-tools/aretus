@@ -1,8 +1,9 @@
-import { loadFont as loadCondensed } from "@remotion/google-fonts/BarlowCondensed";
-import { loadFont as loadBarlow } from "@remotion/google-fonts/Barlow";
+import { loadFont as loadArchivo } from "@remotion/google-fonts/Archivo";
+import { loadFont as loadPlexMono } from "@remotion/google-fonts/IBMPlexMono";
 
-export const { fontFamily: display } = loadCondensed("normal", { weights: ["600", "800"], subsets: ["latin"] });
-export const { fontFamily: body } = loadBarlow("normal", { weights: ["500"], subsets: ["latin"] });
+export const { fontFamily: display } = loadArchivo("normal", { weights: ["500", "600"], subsets: ["latin"] });
+export const { fontFamily: body } = loadArchivo("normal", { weights: ["400", "500"], subsets: ["latin"] });
+export const { fontFamily: mono } = loadPlexMono("normal", { weights: ["500"], subsets: ["latin"] });
 
 export const color = {
   charcoal: "#111417",

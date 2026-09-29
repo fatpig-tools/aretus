@@ -1,6 +1,6 @@
 import { AbsoluteFill, Easing, Interactive, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
 import { frame as mapFrame, places, project, type PlaceKey } from "../content/geo";
-import { body, color, display } from "./brand";
+import { body, color, display, mono } from "./brand";
 
 const ease = Easing.bezier(0.16, 1, 0.3, 1);
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
@@ -108,7 +108,7 @@ export const ProjectRoutes: React.FC = () => {
               translate: interpolate(f, [p.at + 6, p.at + 22], ["0px 12px", "0px 0px"], { ...clamp, easing: ease }),
             }}
           >
-            <div style={{ fontFamily: display, fontWeight: 800, fontSize: 34, letterSpacing: 2, textTransform: "uppercase" }}>
+            <div style={{ fontFamily: display, fontWeight: 600, fontSize: 32, letterSpacing: -0.5 }}>
               {places[p.key].name}
             </div>
             {p.note ? <div style={{ fontSize: 20, color: color.steelLight }}>{p.note}</div> : null}
@@ -132,7 +132,7 @@ export const ProjectRoutes: React.FC = () => {
               translate: interpolate(f, [r.start + 25, r.start + 45], ["0px 16px", "0px 0px"], { ...clamp, easing: ease }),
             }}
           >
-            <div style={{ fontFamily: display, fontWeight: 800, fontSize: 88, lineHeight: 0.9, color: color.signal }}>{r.label}</div>
+            <div style={{ fontFamily: display, fontWeight: 600, fontSize: 80, lineHeight: 0.95, letterSpacing: -2, color: color.signal }}>{r.label}</div>
             <div style={{ fontSize: 22, color: color.dust }}>{r.sub}</div>
           </Interactive.Div>
         );
@@ -145,10 +145,10 @@ export const ProjectRoutes: React.FC = () => {
           position: "absolute",
           left: MAP.x,
           top: 56,
-          fontFamily: display,
-          fontWeight: 600,
-          fontSize: 26,
-          letterSpacing: 6,
+          fontFamily: mono,
+          fontWeight: 500,
+          fontSize: 22,
+          letterSpacing: 4,
           textTransform: "uppercase",
           color: color.steelLight,
           opacity: interpolate(f, [10, 30], [0, 1], clamp),
@@ -172,10 +172,10 @@ export const ProjectRoutes: React.FC = () => {
           translate: interpolate(f, [240, 262], ["40px 0px", "0px 0px"], { ...clamp, easing: ease }),
         }}
       >
-        <div style={{ fontFamily: display, fontWeight: 600, fontSize: 22, letterSpacing: 4, color: color.steelLight, textTransform: "uppercase" }}>
+        <div style={{ fontFamily: mono, fontWeight: 500, fontSize: 18, letterSpacing: 3, color: color.steelLight, textTransform: "uppercase" }}>
           Outside Odisha
         </div>
-        <div style={{ fontFamily: display, fontWeight: 800, fontSize: 52, lineHeight: 1, marginTop: 10, textTransform: "uppercase" }}>
+        <div style={{ fontFamily: display, fontWeight: 600, fontSize: 48, lineHeight: 1.05, letterSpacing: -1, marginTop: 12 }}>
           Yamuna Expressway
         </div>
         <div style={{ fontSize: 24, marginTop: 12, color: color.dust }}>11 km earthwork · ₹108 Cr package · 150-person spread</div>

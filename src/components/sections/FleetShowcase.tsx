@@ -59,7 +59,7 @@ export function FleetShowcase({ units }: FleetShowcaseProps) {
               </AnimatePresence>
             )}
             {!unit.photo.src ? (
-              <p className="pointer-events-none absolute bottom-6 right-6 font-display text-xs font-semibold uppercase tracking-[0.25em] text-steel-light">
+              <p className="pointer-events-none absolute bottom-6 right-6 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-steel-light">
                 Drag to rotate
               </p>
             ) : null}
@@ -70,7 +70,7 @@ export function FleetShowcase({ units }: FleetShowcaseProps) {
                   initial={{ y: "100%", opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: "-100%", opacity: 0 }}
-                  className="display text-8xl text-signal"
+                  className="display text-stat text-signal"
                 >
                   ×{unit.qty}
                 </motion.span>
@@ -99,7 +99,7 @@ export function FleetShowcase({ units }: FleetShowcaseProps) {
             <p className="eyebrow">
               Qty <span className="text-signal">{u.qty}</span>
             </p>
-            <h2 className="display mt-4 text-[clamp(2.4rem,4.5vw,4rem)]">{u.name}</h2>
+            <h2 className="display mt-4 text-h2">{u.name}</h2>
             <dl className="mt-8 space-y-6">
               <div>
                 <dt className="eyebrow">Key specs</dt>

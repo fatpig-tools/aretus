@@ -28,7 +28,7 @@ export function PageHero({ eyebrow, headline, intro, highlight, children }: Page
           delay={0.3}
           text={headline}
           highlight={highlight}
-          className="display mt-6 max-w-6xl text-[clamp(3rem,9vw,8.5rem)]"
+          className="display mt-6 max-w-6xl text-h1"
         />
         {intro ? (
           <Reveal delay={0.6}>

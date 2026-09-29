@@ -20,10 +20,10 @@ export function WhatWeDo({ items }: { items: Feature[] }) {
                   aria-hidden
                   className="absolute inset-0 origin-bottom scale-y-0 bg-signal transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:scale-y-100 group-focus-visible:scale-y-100"
                 />
-                <span className="relative font-display text-lg font-bold text-steel-light transition-colors group-hover:text-charcoal">
+                <span className="relative font-mono text-sm text-steel-light transition-colors group-hover:text-charcoal">
                   0{i + 1}
                 </span>
-                <h3 className="display relative text-[clamp(2rem,4vw,3.5rem)] transition-colors group-hover:text-charcoal">
+                <h3 className="display relative text-h3 transition-colors group-hover:text-charcoal">
                   {item.title}
                 </h3>
                 <p className="relative max-w-xl text-dust-dim transition-colors group-hover:text-charcoal">{item.body}</p>

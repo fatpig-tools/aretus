@@ -39,19 +39,19 @@ export default async function ProjectsPage() {
                   href={`/projects/${p.slug}`}
                   className="group grid gap-6 border-b border-line py-10 transition-colors md:grid-cols-[5rem_1fr_16rem_auto] md:items-center md:gap-10 md:py-12"
                 >
-                  <span className="font-display text-lg font-bold text-steel-light">0{i + 1}</span>
+                  <span className="font-mono text-sm text-steel-light">0{i + 1}</span>
                   <div>
                     <p className="eyebrow">
                       {p.sector} · {p.client}
                     </p>
-                    <h2 className="display mt-3 text-[clamp(2rem,4vw,3.4rem)] transition-colors group-hover:text-signal">
+                    <h2 className="display mt-3 text-h3 transition-colors group-hover:text-signal">
                       {p.title}
                     </h2>
                     {p.location ? <p className="mt-3 text-dust-dim">{p.location}</p> : null}
                   </div>
                   <div className="md:text-right">
                     {p.km ? (
-                      <p className="display text-6xl text-signal">
+                      <p className="display text-stat text-signal">
                         {p.km}
                         <span className="ml-1 text-2xl text-dust">km</span>
                       </p>

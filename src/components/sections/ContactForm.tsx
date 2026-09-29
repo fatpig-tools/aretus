@@ -44,7 +44,7 @@ export function ContactForm({ page }: { page: ContactPage }) {
         className="flex min-h-96 flex-col justify-center border-l-4 border-signal bg-asphalt p-10"
       >
         <CheckCircle2 aria-hidden className="size-12 text-signal" />
-        <p className="display mt-6 text-4xl md:text-5xl">{status.message}</p>
+        <p className="display mt-6 text-h2">{status.message}</p>
       </motion.div>
     );
   }
@@ -86,7 +86,7 @@ export function ContactForm({ page }: { page: ContactPage }) {
           {page.services.map((s) => (
             <label key={s} className="cursor-pointer">
               <input type="checkbox" value={s} className="peer sr-only" {...register("services")} />
-              <span className="inline-flex min-h-11 items-center border border-line px-4 font-display text-base font-semibold uppercase tracking-wide transition-colors peer-checked:border-signal peer-checked:bg-signal peer-checked:text-charcoal peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-signal hover:border-signal">
+              <span className="inline-flex min-h-11 items-center border border-line px-4 font-mono text-xs font-medium uppercase tracking-[0.12em] transition-colors peer-checked:border-signal peer-checked:bg-signal peer-checked:text-charcoal peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-signal hover:border-signal">
                 {s}
               </span>
             </label>
@@ -139,7 +139,7 @@ export function ContactForm({ page }: { page: ContactPage }) {
         <button
           type="submit"
           disabled={pending}
-          className="group inline-flex min-h-14 cursor-pointer items-center justify-center gap-3 bg-signal px-8 font-display text-xl font-bold uppercase tracking-wide text-charcoal transition-colors hover:bg-dust disabled:cursor-wait disabled:opacity-70"
+          className="group inline-flex min-h-14 cursor-pointer items-center justify-center gap-3 bg-signal px-8 text-base font-semibold text-charcoal transition-colors hover:bg-dust disabled:cursor-wait disabled:opacity-70"
         >
           {pending ? <Loader2 aria-hidden className="size-5 animate-spin" /> : null}
           {page.submitLabel}

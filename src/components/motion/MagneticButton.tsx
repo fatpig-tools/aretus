@@ -43,12 +43,12 @@ export function MagneticButton({ href, children, variant = "signal", className =
         y.set(0);
       }}
       style={{ x, y }}
-      className={`group inline-flex min-h-12 cursor-pointer items-center gap-3 px-6 font-display text-lg font-bold uppercase tracking-wide transition-colors duration-200 ${styles} ${className}`}
+      className={`group inline-flex min-h-12 cursor-pointer items-center gap-3 px-6 text-[0.95rem] font-semibold transition-colors duration-200 ${styles} ${className}`}
     >
       {children}
       <ArrowUpRight
         aria-hidden
-        className="size-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+        className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
       />
     </MotionLink>
   );

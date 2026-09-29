@@ -40,8 +40,8 @@ export default async function AboutPage() {
             {about.principles.map((p, i) => (
               <li key={p._key} className="bg-asphalt">
                 <Reveal delay={(i % 3) * 0.08} className="flex h-full flex-col gap-6 p-8 md:p-10">
-                  <span className="font-display text-sm font-bold text-signal">0{i + 1}</span>
-                  <h3 className="display text-4xl">{p.title}</h3>
+                  <span className="font-mono text-xs text-signal">0{i + 1}</span>
+                  <h3 className="display text-h3">{p.title}</h3>
                   <p className="text-dust-dim">
                     <span className="sr-only">What it means for you: </span>
                     {p.body}
@@ -51,7 +51,7 @@ export default async function AboutPage() {
             ))}
             <li className="bg-signal text-charcoal md:col-span-2 lg:col-span-1">
               <Link href="/fleet" className="group flex h-full min-h-56 flex-col justify-between p-8 md:p-10">
-                <span className="font-display text-sm font-bold">See it for yourself</span>
+                <span className="font-mono text-xs uppercase tracking-[0.12em]">See it for yourself</span>
                 <span className="display flex items-end justify-between gap-4 text-4xl">
                   Meet the fleet
                   <ArrowUpRight aria-hidden className="size-10 transition-transform duration-300 group-hover:rotate-45" />
@@ -69,7 +69,7 @@ export default async function AboutPage() {
             <p className="mt-8 max-w-xl text-lg text-dust-dim">{about.whereWeWork}</p>
             <ul className="mt-8 flex flex-wrap gap-2">
               {about.areas.map((a) => (
-                <li key={a} className="border border-line px-4 py-2 font-display text-lg font-semibold uppercase tracking-wide">
+                <li key={a} className="border border-line px-4 py-2 font-mono text-xs font-medium uppercase tracking-[0.12em]">
                   {a}
                 </li>
               ))}

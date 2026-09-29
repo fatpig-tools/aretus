@@ -23,7 +23,7 @@ export function SectionHeading({
       <SplitText
         text={title}
         highlight={highlight}
-        className="display mt-5 max-w-4xl text-[clamp(2.4rem,5.5vw,5rem)]"
+        className="display mt-5 max-w-4xl text-h2"
       />
     </div>
   );

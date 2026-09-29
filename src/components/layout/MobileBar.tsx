@@ -7,7 +7,7 @@ import { phoneDigits } from "@/lib/site";
 export function MobileBar({ settings }: { settings: SiteSettings }) {
   const phone = phoneDigits(settings.phone);
   const wa = phoneDigits(settings.whatsapp ?? settings.phone)?.replace("+", "");
-  const item = "flex min-h-14 flex-1 flex-col items-center justify-center gap-0.5 font-display text-xs font-bold uppercase tracking-wider";
+  const item = "flex min-h-14 flex-1 flex-col items-center justify-center gap-0.5 font-mono text-[0.68rem] font-medium uppercase tracking-[0.1em]";
 
   return (
     <nav

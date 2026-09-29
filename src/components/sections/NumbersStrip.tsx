@@ -18,7 +18,7 @@ export function NumbersStrip({ numbers }: { numbers: Stat[] }) {
             } ${i % 2 === 0 ? "border-r" : "lg:border-r"} ${i === 3 ? "lg:border-r-0" : ""} ${i === 2 ? "lg:pl-8" : ""}`}
           >
             <dt className="max-w-[22ch] text-sm text-dust-dim md:text-base">{n.label}</dt>
-            <dd className="display flex items-baseline gap-2 text-[clamp(3.2rem,7vw,6.5rem)] text-signal">
+            <dd className="display flex items-baseline gap-2 text-stat text-signal">
               <CountUp to={n.countTo} display={n.display} />
               {n.unit ? <span className="text-[0.4em] text-dust">{n.unit}</span> : null}
             </dd>

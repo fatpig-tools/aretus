@@ -62,7 +62,7 @@ export function Header() {
                   <Link
                     href={link.href}
                     aria-current={isActive(link.href) ? "page" : undefined}
-                    className="group relative py-2 font-display text-base font-semibold uppercase tracking-[0.12em] text-dust transition-colors hover:text-signal aria-[current=page]:text-signal"
+                    className="group relative py-2 text-[0.95rem] font-medium text-dust/85 transition-colors hover:text-dust aria-[current=page]:text-dust"
                   >
                     {link.label}
                     <span
@@ -77,7 +77,7 @@ export function Header() {
           <div className="flex items-center gap-3">
             <Link
               href="/contact"
-              className="hidden min-h-11 items-center bg-signal px-5 font-display text-base font-bold uppercase tracking-wide text-charcoal transition-colors hover:bg-dust sm:inline-flex"
+              className="hidden min-h-11 items-center bg-signal px-5 text-[0.95rem] font-semibold text-charcoal transition-colors hover:bg-dust sm:inline-flex"
             >
               Get a Quote
             </Link>
@@ -118,7 +118,7 @@ export function Header() {
                     <Link
                       href={link.href}
                       aria-current={isActive(link.href) ? "page" : undefined}
-                      className="flex items-baseline justify-between py-4 font-display text-4xl font-extrabold uppercase aria-[current=page]:text-signal"
+                      className="flex items-baseline justify-between py-4 display text-h1 aria-[current=page]:text-signal"
                     >
                       {link.label}
                       <span className="font-sans text-sm font-medium text-steel-light">0{i + 1}</span>

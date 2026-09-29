@@ -37,9 +37,9 @@ export function WhyAretus({ items }: { items: Feature[] }) {
                 key={item._key}
                 className="flex flex-col justify-between border-t-4 border-charcoal bg-[#dcd7cd] p-8 lg:h-[24rem] lg:w-[30rem] lg:p-10"
               >
-                <span className="display text-[5rem] text-charcoal/15">0{i + 1}</span>
+                <span className="font-mono text-sm text-charcoal/50">0{i + 1} / 04</span>
                 <div>
-                  <h3 className="display text-[clamp(2rem,3.4vw,3rem)]">{item.title}</h3>
+                  <h3 className="display text-h3">{item.title}</h3>
                   <p className="mt-4 max-w-sm text-lg text-charcoal/75">{item.body}</p>
                 </div>
               </li>

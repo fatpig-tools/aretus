@@ -16,7 +16,7 @@ export default async function HomePage() {
   const [home, { clients }] = await Promise.all([getHomePage(), getClientsPage()]);
   return (
     <>
-      <HomeHero hero={home.hero} />
+      <HomeHero hero={home.hero} services={home.whatWeDo} />
       <NumbersStrip numbers={home.numbers} />
       <WhatWeDo items={home.whatWeDo} />
       <WhyAretus items={home.whyAretus} />

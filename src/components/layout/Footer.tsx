@@ -34,7 +34,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
   return (
     <footer className="relative overflow-hidden border-t border-line bg-charcoal pb-28 pt-20 lg:pb-10">
       <div className="shell">
-        <p className="display max-w-5xl text-[clamp(2.5rem,7vw,6.5rem)]">
+        <p className="display max-w-5xl text-h1">
           Moving earth. Moving material. <span className="text-signal">Moving projects forward.</span>
         </p>
         <RoadLine className="mt-12 w-full" />

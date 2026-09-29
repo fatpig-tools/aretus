@@ -23,7 +23,7 @@ export default async function ServicesPage() {
             <a
               key={s._key}
               href={`#${s.slug}`}
-              className="border border-line px-4 py-2 font-display text-base font-semibold uppercase tracking-wide transition-colors hover:border-signal hover:text-signal"
+              className="border border-line px-4 py-2 font-mono text-xs font-medium uppercase tracking-[0.12em] transition-colors hover:border-signal hover:text-signal"
             >
               {s.number} · {s.title}
             </a>
@@ -39,10 +39,10 @@ export default async function ServicesPage() {
         >
           <div className={`shell grid gap-12 lg:grid-cols-2 lg:gap-20 ${i % 2 ? "lg:[&>*:first-child]:order-2" : ""}`}>
             <div>
-              <p className="display text-[clamp(5rem,12vw,10rem)] leading-none text-signal/90" aria-hidden>
+              <p className="display text-stat leading-none text-signal/90" aria-hidden>
                 {s.number}
               </p>
-              <SplitText as="h2" text={s.title} className="display mt-2 text-[clamp(2.4rem,5vw,4.5rem)]" />
+              <SplitText as="h2" text={s.title} className="display mt-2 text-h2" />
               <Reveal delay={0.1}>
                 <p className="mt-8 max-w-2xl text-lg text-dust/85">{s.body}</p>
               </Reveal>

@@ -37,7 +37,10 @@ export const credits: { title: string; items: Credit[] }[] = [
   },
   {
     title: "Typefaces",
-    items: [{ name: "Barlow and Barlow Condensed", author: "Jeremy Tribby", license: "SIL Open Font License", url: "https://fonts.google.com/specimen/Barlow" }],
+    items: [
+      { name: "Archivo", author: "Omnibus-Type", license: "SIL Open Font License", url: "https://fonts.google.com/specimen/Archivo" },
+      { name: "IBM Plex Mono", author: "IBM", license: "SIL Open Font License", url: "https://fonts.google.com/specimen/IBM+Plex+Mono" },
+    ],
   },
   {
     title: "Built with",

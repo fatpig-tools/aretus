@@ -32,19 +32,19 @@ export default async function FleetPage() {
             { n: excavators, label: "excavator" },
           ].map((s, i) => (
             <span key={s.label} className="flex items-baseline gap-3">
-              {i > 0 ? <span className="display text-5xl text-steel-light">+</span> : null}
-              <span className="display text-[clamp(3.5rem,8vw,7rem)]">
+              {i > 0 ? <span className="display text-h2 text-steel-light">+</span> : null}
+              <span className="display text-stat">
                 <CountUp to={s.n} display={String(s.n)} />
               </span>
-              <span className="font-display text-xl font-semibold uppercase tracking-wide text-dust-dim">{s.label}</span>
+              <span className="font-mono text-xs uppercase tracking-[0.12em] text-dust-dim">{s.label}</span>
             </span>
           ))}
-          <span className="display text-5xl text-steel-light">=</span>
+          <span className="display text-h2 text-steel-light">=</span>
           <span className="flex items-baseline gap-3">
-            <span className="display text-[clamp(3.5rem,8vw,7rem)] text-signal">
+            <span className="display text-stat text-signal">
               <CountUp to={total} display={String(total)} />
             </span>
-            <span className="font-display text-xl font-semibold uppercase tracking-wide text-dust-dim">owned units</span>
+            <span className="font-mono text-xs uppercase tracking-[0.12em] text-dust-dim">owned units</span>
           </span>
           <p className="sr-only">{fleet.summary}</p>
         </Reveal>

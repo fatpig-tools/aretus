@@ -18,7 +18,7 @@ export function TrustStrip({ line, clients }: { line: string; clients: Client[] 
         <Marquee seconds={45}>
           {clients.map((c) => (
             <span key={c._key} className="flex items-center">
-              <span className="display whitespace-nowrap px-8 text-[clamp(2.5rem,6vw,5rem)] text-dust/90 md:px-12">{c.name}</span>
+              <span className="display whitespace-nowrap px-8 text-h2 text-dust/90 md:px-12">{c.name}</span>
               <span aria-hidden className="h-2 w-10 bg-signal" />
             </span>
           ))}

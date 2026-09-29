@@ -1,19 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Barlow, Barlow_Condensed } from "next/font/google";
+import { Archivo, IBM_Plex_Mono } from "next/font/google";
 import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
-const barlow = Barlow({
-  variable: "--font-barlow",
+// Archivo is variable in weight and width; the display style uses a semi-expanded cut.
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  axes: ["wdth"],
   display: "swap",
 });
 
-const barlowCondensed = Barlow_Condensed({
-  variable: "--font-barlow-condensed",
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -34,7 +35,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en-IN" className={`${barlow.variable} ${barlowCondensed.variable} antialiased`}>
+    <html lang="en-IN" className={`${archivo.variable} ${plexMono.variable} antialiased`}>
       <body className="min-h-dvh">{children}</body>
     </html>
   );

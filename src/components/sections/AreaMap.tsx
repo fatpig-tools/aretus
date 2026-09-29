@@ -24,7 +24,7 @@ export function AreaMap({ highlight }: { highlight?: string }) {
             return <line key={lon} y1="0" y2={H} x1={x} x2={x} />;
           })}
         </g>
-        <g fill="var(--steel-light)" fontSize="11" fontFamily="var(--font-barlow)" opacity="0.6">
+        <g fill="var(--steel-light)" fontSize="10" fontFamily="var(--font-plex-mono)" opacity="0.6">
           {lats.map((lat) => (
             <text key={lat} x="8" y={project(lat, frame.lonMin, W, H).y - 6}>
               {lat.toFixed(1)}°N
@@ -65,12 +65,12 @@ export function AreaMap({ highlight }: { highlight?: string }) {
                 y={y - 10}
                 textAnchor={flip ? "end" : "start"}
                 fill="var(--dust)"
-                fontSize="18"
-                fontWeight="700"
-                fontFamily="var(--font-barlow-condensed)"
-                letterSpacing="1.5"
+                fontSize="17"
+                fontWeight="600"
+                fontFamily="var(--font-archivo)"
+                letterSpacing="-0.2"
               >
-                {p.name.toUpperCase()}
+                {p.name}
               </text>
             </g>
           );
@@ -78,7 +78,7 @@ export function AreaMap({ highlight }: { highlight?: string }) {
       </svg>
       <figcaption className="flex items-center justify-between gap-4 border-t border-line px-5 py-3 text-sm text-dust-dim">
         <span>Odisha operating area</span>
-        <span className="font-display font-semibold uppercase tracking-wider text-steel-light">+ Yamuna Expressway, UP</span>
+        <span className="font-mono text-xs uppercase tracking-[0.12em] text-steel-light">+ Yamuna Expressway, UP</span>
       </figcaption>
     </figure>
   );

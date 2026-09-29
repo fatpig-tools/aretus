@@ -20,7 +20,7 @@ export function FaqList({ faqs }: { faqs: Faq[] }) {
                 aria-expanded={isOpen}
                 aria-controls={`faq-a-${f._key}`}
                 onClick={() => setOpen(isOpen ? null : f._key)}
-                className="flex w-full cursor-pointer items-center justify-between gap-6 py-7 text-left font-display text-[clamp(1.5rem,2.6vw,2.25rem)] font-bold uppercase leading-tight transition-colors hover:text-signal"
+                className="flex w-full cursor-pointer items-center justify-between gap-6 py-7 text-left display text-h3 leading-snug transition-colors hover:text-signal"
               >
                 {f.question}
                 <Plus

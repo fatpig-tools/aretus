@@ -12,7 +12,7 @@ export function MachineVisual({ photo, model, className = "" }: { photo: PhotoSl
   return (
     <div className={`relative overflow-hidden border border-line bg-asphalt ${className}`}>
       <MachineViewer model={model} className="absolute inset-0" fallback={<PhotoSlot photo={photo} className="size-full" />} />
-      <p className="pointer-events-none absolute bottom-4 right-4 font-display text-xs font-semibold uppercase tracking-[0.25em] text-steel-light">
+      <p className="pointer-events-none absolute bottom-4 right-4 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-steel-light">
         Drag to rotate
       </p>
     </div>
