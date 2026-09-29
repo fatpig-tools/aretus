@@ -5,7 +5,7 @@ import { getHomePage, getProjectsPage } from "@/content";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/motion/Reveal";
 import { CtaBanner } from "@/components/sections/CtaBanner";
-import { AreaMap } from "@/components/sections/AreaMap";
+import { LazyVideo } from "@/components/ui/LazyVideo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { seo } = await getProjectsPage({ stega: false });
@@ -20,7 +20,13 @@ export default async function ProjectsPage() {
 
       <section className="shell pb-10">
         <Reveal>
-          <AreaMap />
+          <figure className="relative overflow-hidden border border-line bg-charcoal">
+            <LazyVideo name="project-routes" loop={false} className="block aspect-video w-full" />
+            <figcaption className="sr-only">
+              Map of our work: AIPL&apos;s 160 km Angul–Sambalpur package, Gayatri&apos;s 46 km Hindol–Angul package,
+              Chandikhol, mining haulage at Barbil, the Mayurbhanj dam, and the Yamuna Expressway outside Odisha.
+            </figcaption>
+          </figure>
         </Reveal>
       </section>
 

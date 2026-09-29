@@ -1,25 +1,13 @@
 import type { Stat } from "@/content/types";
 import { CountUp } from "@/components/motion/CountUp";
 import { Reveal } from "@/components/motion/Reveal";
+import { LazyVideo } from "@/components/ui/LazyVideo";
 
-export function NumbersStrip({ numbers, video }: { numbers: Stat[]; video?: { mp4: string; webm?: string; poster?: string } }) {
+export function NumbersStrip({ numbers }: { numbers: Stat[] }) {
   return (
     <section aria-label="Aretus in numbers" className="relative overflow-hidden border-y border-line bg-asphalt">
-      {video ? (
-        <video
-          aria-hidden
-          className="absolute inset-0 size-full object-cover opacity-25"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-          poster={video.poster}
-        >
-          {video.webm ? <source src={video.webm} type="video/webm" /> : null}
-          <source src={video.mp4} type="video/mp4" />
-        </video>
-      ) : null}
+      <LazyVideo name="survey-loop" className="absolute inset-0 size-full object-cover opacity-20" />
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-asphalt via-asphalt/70 to-asphalt/40" />
       <dl className="shell relative grid grid-cols-2 lg:grid-cols-4">
         {numbers.map((n, i) => (
           <Reveal
