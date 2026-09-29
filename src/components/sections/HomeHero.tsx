@@ -23,6 +23,7 @@ export function HomeHero({ hero }: { hero: HomePage["hero"] }) {
     <section ref={ref} className="relative h-[100svh] min-h-[640px] overflow-hidden">
       <HeroVisual progress={scrollYProgress} />
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-charcoal/10" />
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-charcoal/80 to-transparent" />
       <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-charcoal/80 to-transparent" />
 
       <motion.div style={{ y: copyY, opacity: copyOpacity }} className="shell relative flex h-full flex-col justify-end pb-24 md:pb-20">

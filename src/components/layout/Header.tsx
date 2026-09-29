@@ -46,6 +46,13 @@ export function Header() {
           solid || open ? "border-b border-line bg-charcoal/85 backdrop-blur-md" : "bg-transparent"
         }`}
       >
+        {/* Scrim while transparent, so the links stay legible over the 3D hero. */}
+        <div
+          aria-hidden
+          className={`pointer-events-none absolute inset-x-0 top-0 -z-10 h-32 bg-gradient-to-b from-charcoal/95 via-charcoal/60 to-transparent transition-opacity duration-300 ${
+            solid || open ? "opacity-0" : "opacity-100"
+          }`}
+        />
         <div className="shell flex h-18 items-center justify-between gap-6">
           <Logo />
           <nav aria-label="Main" className="hidden lg:block">
@@ -55,7 +62,7 @@ export function Header() {
                   <Link
                     href={link.href}
                     aria-current={isActive(link.href) ? "page" : undefined}
-                    className="group relative py-2 font-display text-[0.95rem] font-semibold uppercase tracking-[0.12em] text-dust/80 transition-colors hover:text-dust aria-[current=page]:text-dust"
+                    className="group relative py-2 font-display text-base font-semibold uppercase tracking-[0.12em] text-dust transition-colors hover:text-signal aria-[current=page]:text-signal"
                   >
                     {link.label}
                     <span
@@ -80,7 +87,7 @@ export function Header() {
               aria-expanded={open}
               aria-controls="mobile-menu"
               aria-label={open ? "Close menu" : "Open menu"}
-              className="grid size-11 cursor-pointer place-items-center border border-line lg:hidden"
+              className="grid size-11 cursor-pointer place-items-center border border-dust/30 bg-charcoal/60 backdrop-blur-sm lg:hidden"
             >
               {open ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
