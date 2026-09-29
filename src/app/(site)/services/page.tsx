@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Check } from "lucide-react";
 import { getHomePage, getServicesPage } from "@/content";
 import { PageHero } from "@/components/ui/PageHero";
-import { PhotoSlot } from "@/components/ui/PhotoSlot";
+import { MachineVisual } from "@/components/sections/MachineVisual";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
@@ -71,7 +71,7 @@ export default async function ServicesPage() {
               </div>
             </div>
             <Reveal delay={0.1} className="lg:sticky lg:top-28 lg:self-start">
-              <PhotoSlot photo={s.photo} className="aspect-[4/3]" />
+              <MachineVisual photo={s.photo} model={s.model} className="aspect-[4/3]" />
             </Reveal>
           </div>
         </section>

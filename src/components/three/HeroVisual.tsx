@@ -3,6 +3,10 @@
 import type { MotionValue } from "framer-motion";
 import { SceneCanvas } from "./SceneCanvas";
 import { HaulRoadScene } from "./HaulRoadScene";
+import { HeroFleet } from "./HeroFleet";
+import { preloadMachines } from "./Machines";
+
+preloadMachines(["tipper", "excavator", "hyva", "primeMover"]);
 
 /** Static stand-in used before WebGL loads, and for reduced motion. */
 export function HeroPoster() {
@@ -27,7 +31,9 @@ export function HeroPoster() {
 export default function HeroVisual({ progress }: { progress: MotionValue<number> }) {
   return (
     <SceneCanvas className="absolute inset-0" fallback={<HeroPoster />}>
-      <HaulRoadScene progress={progress} />
+      <HaulRoadScene progress={progress}>
+        <HeroFleet progress={progress} />
+      </HaulRoadScene>
     </SceneCanvas>
   );
 }

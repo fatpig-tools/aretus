@@ -1,6 +1,7 @@
 "use client";
 
 import { useFrame } from "@react-three/fiber";
+import { Environment, Lightformer } from "@react-three/drei";
 import type { MotionValue } from "framer-motion";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
@@ -222,15 +223,15 @@ function CameraRig({ progress }: { progress?: MotionValue<number> }) {
 
   useFrame(({ camera, pointer }, dt) => {
     const p = progress?.get() ?? 0;
-    const z = 26 - p * 60;
-    const x = roadX(z) - 9 + pointer.x * 1.5;
-    const y = 7.5 - p * 2.5 + pointer.y * 0.8;
+    const z = 24 - p * 50;
+    const x = roadX(z) - 13 + pointer.x * 1.5;
+    const y = 7 - p * 2 + pointer.y * 0.8;
     const k = 1 - Math.pow(0.001, dt);
     camera.position.x += (x - camera.position.x) * k;
     camera.position.y += (y - camera.position.y) * k;
     camera.position.z += (z - camera.position.z) * k;
-    const lz = z - 40;
-    look.set(roadX(lz) - 6, 1, lz);
+    const lz = z - 30;
+    look.set(roadX(lz) - 4, 1.5, lz);
     camera.lookAt(look);
   });
 
@@ -244,6 +245,12 @@ export function HaulRoadScene({ progress, children }: { progress?: MotionValue<n
       <fog attach="fog" args={[FOG, 40, 230]} />
       <hemisphereLight args={["#8fa9bf", "#111417", 0.8]} />
       <directionalLight position={[-40, 30, -60]} intensity={2.2} color="#ffcf73" />
+      {/* Cool fill from the camera side so the machines read against the dusk. */}
+      <directionalLight position={[-20, 14, 40]} intensity={0.9} color="#b9cbe0" />
+      <Environment resolution={128} frames={1}>
+        <Lightformer form="rect" intensity={2.5} position={[-30, 8, -60]} scale={[60, 10, 1]} color="#ffb347" />
+        <Lightformer form="rect" intensity={0.8} position={[0, 30, 0]} rotation-x={Math.PI / 2} scale={[80, 80, 1]} color="#8fa9bf" />
+      </Environment>
       <Terrain />
       <Road />
       <HorizonGlow />

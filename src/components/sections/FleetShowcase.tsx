@@ -1,21 +1,20 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import type { FleetUnit } from "@/content/types";
 import { PhotoSlot } from "@/components/ui/PhotoSlot";
 
-type FleetShowcaseProps = {
-  units: FleetUnit[];
-  /** Optional 3D stage; receives the active unit. Falls back to the unit's photo slot. */
-  stage?: (unit: FleetUnit) => React.ReactNode;
-};
+const MachineViewer = dynamic(() => import("@/components/three/MachineViewer"), { ssr: false });
+
+type FleetShowcaseProps = { units: FleetUnit[] };
 
 /**
  * Sticky stage on the left, unit specs scrolling on the right. Whichever spec block is
  * nearest the middle of the viewport drives the stage.
  */
-export function FleetShowcase({ units, stage }: FleetShowcaseProps) {
+export function FleetShowcase({ units }: FleetShowcaseProps) {
   const [active, setActive] = useState(0);
   const items = useRef<(HTMLElement | null)[]>([]);
 
@@ -39,8 +38,12 @@ export function FleetShowcase({ units, stage }: FleetShowcaseProps) {
       <div className="relative hidden lg:block">
         <div className="sticky top-24 h-[calc(100vh-8rem)]">
           <div className="relative h-full overflow-hidden border border-line bg-asphalt">
-            {stage ? (
-              stage(unit)
+            {!unit.photo.src ? (
+              <MachineViewer
+                model={unit.model}
+                className="absolute inset-0"
+                fallback={<PhotoSlot photo={unit.photo} className="size-full" />}
+              />
             ) : (
               <AnimatePresence mode="wait">
                 <motion.div
@@ -55,6 +58,11 @@ export function FleetShowcase({ units, stage }: FleetShowcaseProps) {
                 </motion.div>
               </AnimatePresence>
             )}
+            {!unit.photo.src ? (
+              <p className="pointer-events-none absolute bottom-6 right-6 font-display text-xs font-semibold uppercase tracking-[0.25em] text-steel-light">
+                Drag to rotate
+              </p>
+            ) : null}
             <div className="pointer-events-none absolute left-6 top-6 flex items-baseline gap-3">
               <AnimatePresence mode="popLayout">
                 <motion.span
@@ -102,7 +110,9 @@ export function FleetShowcase({ units, stage }: FleetShowcaseProps) {
                 <dd className="mt-2 text-lg text-dust/85">{u.typicalUse}</dd>
               </div>
             </dl>
-            <div className="mt-8 lg:hidden">{stage ? <div className="relative aspect-[4/3] border border-line bg-asphalt">{stage(u)}</div> : <PhotoSlot photo={u.photo} className="aspect-[4/3]" />}</div>
+            <div className="mt-8 lg:hidden">
+              <PhotoSlot photo={u.photo} className="aspect-[4/3]" />
+            </div>
           </li>
         ))}
       </ol>

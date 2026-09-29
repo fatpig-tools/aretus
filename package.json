@@ -10,7 +10,9 @@
     "remotion": "remotion studio",
     "seed": "node --env-file=.env.local scripts/seed-sanity.mts",
     "studio": "npm --prefix studio run dev",
-    "video:render": "bash scripts/render-videos.sh"
+    "video:render": "bash scripts/render-videos.sh",
+    "models:fetch": "bash scripts/fetch-models.sh",
+    "models:optimize": "node scripts/optimize-models.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",
