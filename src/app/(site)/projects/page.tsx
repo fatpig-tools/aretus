@@ -8,7 +8,7 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { AreaMap } from "@/components/sections/AreaMap";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { seo } = await getProjectsPage();
+  const { seo } = await getProjectsPage({ stega: false });
   return { title: seo.title, description: seo.description, alternates: { canonical: "/projects" } };
 }
 

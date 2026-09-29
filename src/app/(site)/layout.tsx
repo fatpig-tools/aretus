@@ -1,4 +1,8 @@
+import { draftMode } from "next/headers";
+import { VisualEditing } from "next-sanity/visual-editing";
 import { getSiteSettings } from "@/content";
+import { isSanityConfigured } from "@/sanity/env";
+import { SanityLive } from "@/sanity/lib/live";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileBar } from "@/components/layout/MobileBar";
@@ -9,6 +13,7 @@ import { siteUrl } from "@/lib/site";
 
 export default async function SiteLayout({ children }: LayoutProps<"/">) {
   const settings = await getSiteSettings();
+  const preview = isSanityConfigured && (await draftMode()).isEnabled;
   return (
     <MotionProvider>
       <JsonLd
@@ -38,6 +43,8 @@ export default async function SiteLayout({ children }: LayoutProps<"/">) {
       <main id="main">{children}</main>
       <Footer settings={settings} />
       <MobileBar settings={settings} />
+      {isSanityConfigured ? <SanityLive /> : null}
+      {preview ? <VisualEditing /> : null}
     </MotionProvider>
   );
 }

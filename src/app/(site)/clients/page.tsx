@@ -5,7 +5,7 @@ import { ClientWall } from "@/components/sections/ClientWall";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { seo } = await getClientsPage();
+  const { seo } = await getClientsPage({ stega: false });
   return { title: seo.title, description: seo.description, alternates: { canonical: "/clients" } };
 }
 

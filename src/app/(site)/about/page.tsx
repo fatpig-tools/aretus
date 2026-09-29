@@ -9,7 +9,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { seo } = await getAboutPage();
+  const { seo } = await getAboutPage({ stega: false });
   return { title: seo.title, description: seo.description, alternates: { canonical: "/about" } };
 }
 

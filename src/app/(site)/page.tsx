@@ -8,7 +8,7 @@ import { TrustStrip } from "@/components/sections/TrustStrip";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { seo } = await getHomePage();
+  const { seo } = await getHomePage({ stega: false });
   return { title: seo.title, description: seo.description, alternates: { canonical: "/" } };
 }
 

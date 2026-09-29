@@ -9,7 +9,7 @@ import { SplitText } from "@/components/motion/SplitText";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { seo } = await getServicesPage();
+  const { seo } = await getServicesPage({ stega: false });
   return { title: seo.title, description: seo.description, alternates: { canonical: "/services" } };
 }
 

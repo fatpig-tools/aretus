@@ -6,7 +6,7 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { JsonLd } from "@/components/ui/JsonLd";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { seo } = await getFaqPage();
+  const { seo } = await getFaqPage({ stega: false });
   return { title: seo.title, description: seo.description, alternates: { canonical: "/faq" } };
 }
 

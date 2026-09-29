@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "remotion": "remotion studio"
+    "remotion": "remotion studio",
+    "seed": "node --env-file=.env.local scripts/seed-sanity.mts",
+    "studio": "npm --prefix studio run dev"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",

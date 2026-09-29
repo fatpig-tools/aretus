@@ -7,7 +7,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { ContactForm } from "@/components/sections/ContactForm";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { seo } = await getContactPage();
+  const { seo } = await getContactPage({ stega: false });
   return { title: seo.title, description: seo.description, alternates: { canonical: "/contact" } };
 }
 

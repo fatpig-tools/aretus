@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps<"/projects/[slug]">): Promise<Metadata> {
-  const project = await getProject((await params).slug);
+  const project = await getProject((await params).slug, { stega: false });
   if (!project) return {};
   return {
     title: `${project.title} | Aretus Projects`,

@@ -7,7 +7,7 @@ import { FleetShowcase } from "@/components/sections/FleetShowcase";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { seo } = await getFleetPage();
+  const { seo } = await getFleetPage({ stega: false });
   return { title: seo.title, description: seo.description, alternates: { canonical: "/fleet" } };
 }
 
