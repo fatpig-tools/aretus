@@ -1,0 +1,27 @@
+import type { Metadata } from "next";
+import { getClientsPage, getHomePage } from "@/content";
+import { HomeHero } from "@/components/sections/HomeHero";
+import { NumbersStrip } from "@/components/sections/NumbersStrip";
+import { WhatWeDo } from "@/components/sections/WhatWeDo";
+import { WhyAretus } from "@/components/sections/WhyAretus";
+import { TrustStrip } from "@/components/sections/TrustStrip";
+import { CtaBanner } from "@/components/sections/CtaBanner";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const { seo } = await getHomePage();
+  return { title: seo.title, description: seo.description, alternates: { canonical: "/" } };
+}
+
+export default async function HomePage() {
+  const [home, { clients }] = await Promise.all([getHomePage(), getClientsPage()]);
+  return (
+    <>
+      <HomeHero hero={home.hero} />
+      <NumbersStrip numbers={home.numbers} />
+      <WhatWeDo items={home.whatWeDo} />
+      <WhyAretus items={home.whyAretus} />
+      <TrustStrip line={home.trustLine} clients={clients} />
+      <CtaBanner body={home.closing.body} cta={home.closing.cta} />
+    </>
+  );
+}
