@@ -7,6 +7,8 @@
  * Idempotent: singletons use fixed IDs; collection documents are matched by slug/name and
  * updated in place, so re-running never creates duplicates.
  */
+import { readFile } from "node:fs/promises";
+import { basename } from "node:path";
 import { createClient } from "@sanity/client";
 import * as data from "../src/content/data.ts";
 
@@ -125,7 +127,13 @@ const collections: [string, string, Doc[]][] = [
   [
     "client",
     "name",
-    data.clientsPage.clients.map(({ _key, logo, ...c }, i) => ({ _type: "client", ...c, logoPermission: false, order: (i + 1) * 10 })),
+    data.clientsPage.clients.map(({ _key, logo, ...c }, i) => ({
+      _type: "client",
+      ...c,
+      logoPermission: Boolean(logo),
+      logoFile: logo,
+      order: (i + 1) * 10,
+    })),
   ],
   ["faq", "question", data.faqPage.faqs.map(({ _key, ...f }, i) => ({ _type: "faq", ...f, order: (i + 1) * 10 }))],
 ];
@@ -134,7 +142,24 @@ function get(doc: Doc, path: string) {
   return path.split(".").reduce<unknown>((v, k) => (v as Record<string, unknown>)?.[k], doc);
 }
 
+/** Uploads a logo from public/ and returns an image field value (dry run: a placeholder). */
+async function uploadLogo(path: string) {
+  if (dryRun) return { _type: "image", asset: { _type: "reference", _ref: `dry-run:${path}` } };
+  const file = await readFile(`public${path}`);
+  const asset = await client.assets.upload("image", file, { filename: basename(path) });
+  return { _type: "image", asset: { _type: "reference", _ref: asset._id } };
+}
+
 async function main() {
+  for (const [type, , docs] of collections) {
+    if (type !== "client") continue;
+    for (const doc of docs) {
+      const path = doc.logoFile as string | undefined;
+      delete doc.logoFile;
+      if (path) doc.logo = await uploadLogo(path);
+    }
+  }
+
   const tx = client.transaction();
   for (const doc of singletons) tx.createOrReplace(doc as Doc & { _id: string });
 

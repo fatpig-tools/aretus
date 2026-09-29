@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import type { Client } from "@/content/types";
+import { ClientLogo } from "@/components/ui/ClientLogo";
 
 export function ClientWall({ clients }: { clients: Client[] }) {
   const sectors = ["All", ...Array.from(new Set(clients.map((c) => c.sector)))];
@@ -37,12 +38,15 @@ export function ClientWall({ clients }: { clients: Client[] }) {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.96 }}
               transition={{ duration: 0.35 }}
-              className="group flex min-h-56 flex-col justify-between bg-charcoal p-8 transition-colors hover:bg-asphalt"
+              className="group flex flex-col gap-6 bg-charcoal p-6 transition-colors hover:bg-asphalt md:p-8"
             >
-              <p className="eyebrow">{c.sector}</p>
-              <div>
-                <h2 className="display text-h3 transition-colors group-hover:text-signal">{c.name}</h2>
-                {c.line ? <p className="mt-3 text-dust-dim">{c.line}</p> : null}
+              <ClientLogo client={c} />
+              <div className="flex flex-1 flex-col justify-between gap-4">
+                <div>
+                  <p className="eyebrow">{c.sector}</p>
+                  <h2 className="display mt-2 text-h3 transition-colors group-hover:text-signal">{c.name}</h2>
+                </div>
+                {c.line ? <p className="text-dust-dim">{c.line}</p> : null}
               </div>
             </motion.li>
           ))}

@@ -2,6 +2,7 @@ import type { Client } from "@/content/types";
 import { Marquee } from "@/components/motion/Marquee";
 import { Reveal } from "@/components/motion/Reveal";
 import { ScrubText } from "@/components/motion/ScrubText";
+import { ClientLogo } from "@/components/ui/ClientLogo";
 
 /** Client names as text (logos only with permission, per the brief). */
 export function TrustStrip({ line, clients }: { line: string; clients: Client[] }) {
@@ -18,9 +19,8 @@ export function TrustStrip({ line, clients }: { line: string; clients: Client[] 
       <div className="mt-14">
         <Marquee seconds={45}>
           {clients.map((c) => (
-            <span key={c._key} className="flex items-center">
-              <span className="display whitespace-nowrap px-8 text-h2 text-dust/90 md:px-12">{c.name}</span>
-              <span aria-hidden className="h-2 w-10 bg-signal" />
+            <span key={c._key} className="group mr-4 flex shrink-0">
+              <ClientLogo client={c} size="sm" />
             </span>
           ))}
         </Marquee>

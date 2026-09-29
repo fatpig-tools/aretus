@@ -48,7 +48,7 @@ export const PROJECT_QUERY = defineQuery(`*[_type == "project" && slug.current =
 export const CLIENTS_QUERY = defineQuery(`*[_id == "clientsPage"][0]{
   ${seo}, headline,
   "clients": *[_type == "client"] | order(order asc){
-    "_key": _id, name, sector, line, "logo": select(logoPermission == true => logo.asset->url)
+    "_key": _id, name, fullName, sector, line, "logo": select(logoPermission == true => logo.asset->url)
   }
 }`);
 

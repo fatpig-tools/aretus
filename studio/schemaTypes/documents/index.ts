@@ -97,6 +97,7 @@ export const client = defineType({
   orderings,
   fields: [
     defineField({ name: "name", type: "string", validation: (r) => r.required() }),
+    defineField({ name: "fullName", title: "Registered name", type: "string", description: "Used as the logo's accessible label, e.g. Agrawal Infrabuild (AIPL)." }),
     defineField({ name: "sector", type: "string", options: { list: ["Highways", "Infrastructure", "Oil & gas", "Logistics", "Mining", "Irrigation"] } }),
     defineField({ name: "line", title: "Line for the logo wall", type: "string" }),
     defineField({ name: "logoPermission", title: "We have permission to show their logo", type: "boolean", initialValue: false }),

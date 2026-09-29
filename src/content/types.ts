@@ -113,7 +113,16 @@ export type Project = {
 
 export type ProjectsPage = { seo: Seo; headline: string; projects: Project[] };
 
-export type Client = { _key: string; name: string; sector: string; line?: string; logo?: string };
+export type Client = {
+  _key: string;
+  name: string;
+  /** Registered name, used as the logo's accessible label. */
+  fullName?: string;
+  sector: string;
+  line?: string;
+  /** Logo file path or URL; clients without one are shown as a text wordmark. */
+  logo?: string;
+};
 
 export type ClientsPage = { seo: Seo; headline: string; clients: Client[] };
 
